@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300&family=Roboto+Slab:wght@400;500&display=swap');
 
 * {
-    margin: 1px;
+    margin: 0px;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Radio Canada', sans-serif;
@@ -30,5 +30,11 @@ p{
     margin:15px 0 20px 0;
 }
 section-p1{
-    padding:40px;
+    padding:40px 80px;
+}
+section-m1{
+    margin:40px 0;
+}
+body{
+    width:100%;
 }
