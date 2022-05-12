@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300&family=Roboto+Slab:wght@400;500&display=swap');
 
 * {
-    background-color: transparent;
-    margin: 1px;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Radio Canada', sans-serif;
@@ -32,4 +30,8 @@ p{
 }
 section-p1{
     padding:40px;
+}
+
+p {
+    color: #222;
 }
