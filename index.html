@@ -13,17 +13,20 @@
 
 <body>
     <section id="header">
-
         <a href="#"><img src="css/logo.png" class="logo" alt="logo"> </a>
         <div>
-            <ul id="navbar">
-                <li><a class="active" href="home.html">Home</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+            <ul id="navbar" class="navbar">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/products">Shop</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li id="cart"><a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li id="login"><a href="#"><i class="fa-solid fa-user"></i></a></li>
             </ul>
+        </div>
+        <div id="mobile">
+           <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+           <i id="bar" class="fas fa-outdent"></i>
         </div>
     </section>
     <section id="hero">
@@ -174,5 +177,5 @@
 
     </section>
 </body>
-
+<script src="js/script.js"></script>
 </html>

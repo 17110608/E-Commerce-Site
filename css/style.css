@@ -6,8 +6,10 @@
     font-family: 'Radio Canada', sans-serif;
 }
 
+
 body {
     padding: 0;
+    /* min-width: 1340px;  */
 }
 
 h1 {
@@ -53,10 +55,10 @@ p {
 
 #header {
     display: flex; 
-    height: 14vh;
+    height: 80px;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
+    padding: 20px 80px;
     background: #E3E6F3;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     z-index: 1;
@@ -68,40 +70,41 @@ p {
 .logo {
     float: left;
     width: auto;
-    height: 10vh;
+    height: 60px;
     margin-left: 4vw;
     display: inline;
 }
 
-#navbar {
+.navbar {
     display: flex;
     align-items: center;
     justify-content: center;
 
 }
 
-#navbar li {
+.navbar li {
     list-style: none;
     padding: 0 20px;
+    display:inline-block;
     position: relative;
 
-}
+} 
 
-#navbar li a {
+.navbar li a {
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
     color: #1a1a1a;
     transition: 0.3s ease;
-}
+} 
 
-#navbar li a:hover,
-#navbar li a.active {
+.navbar li a:hover,
+.navbar li a.active {
     color: #088178;
 }
 
-#navbar li a.active::after,
-#navbar li a:hover::after {
+.navbar li a.active::after,
+.navbar li a:hover::after {
     content: "";
     width: 30%;
     height: 2px;
@@ -112,10 +115,15 @@ p {
 
 }
 
+#mobile {
+    display: none;
+    align-items: center;
+}
+
 #hero {
     background-image: url("../img/hero4.png");
     height: 100vh;
-    width: auto;
+    width: 100%;
     background-position: top 25% right 0%;
     background-size: cover;
     padding-left: 8vw;
@@ -286,3 +294,51 @@ p {
     right: 10px;
 }
 
+@media screen and (max-width: 820px){
+
+    .navbar {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right:-300px;
+        height: 100vh;
+        width: 300px;
+        background-color: #E3E6F3;
+        margin-right:0;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.06);
+        padding: 80px 0 0 10px;
+    }
+
+    .navbar.active {
+        right: 0px;
+    }
+
+    .logo {
+        float: left;
+        width: auto;
+        height:40px;
+        margin-left: 0vw;
+        display: inline;
+    }
+
+    .navbar li {
+        margin-bottom: 25px;
+    }
+
+    #mobile {
+        display: flex;
+        align-items: center;
+    }
+
+    #mobile i {
+        color: #1a1a1a;
+        font-size: 24px;
+        padding-left: 20px;
+        cursor: pointer;
+    }
+    
+    
+}
