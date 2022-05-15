@@ -49,10 +49,10 @@ if (login1 || login2) {
 hero.addEventListener("mouseover", () => {
     console.log("Hero Div clicked");
     if (login1) {
-        login1.removeEventListener("click", show_login);
+        login1.removeEventListener("mouseover", show_login);
     }
     if (login2) {
-        login2.removeEventListener("click", show_login);
+        login2.removeEventListener("mouseover", show_login);
     }
     noMenu();
 
