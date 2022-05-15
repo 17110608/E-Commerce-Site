@@ -1,12 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart Page</title>
+    <title>Cara Shopping</title>
+    <link rel="icon" href="../img/logo.png" type="image/x-icon"> <!-- title image -->
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://kit.fontawesome.com/ce8af85eff.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    
+    <div id="login-container" class="login-container">
+        <h3 id="wel" class="wel">Welcome!</h3>
+        <p id="ac-details" class="ac-details">To View account details</p>
+        <button id="login-btn" class="login-btn" onclick="window.location='login'">Login</button>
+        <hr id="log-hr" class="log-hr">
+        <p id="new-user" class="new-user">New User ?</p>
+        <button id="signup-btn" class="signup-btn" onclick="window.location='register'">Sign-UP</button>
+    </div>
+    <section id="header">
+        <a href="../index.html"><img src="../img/logo.png" class="logo" alt="logo"> </a>
+        <div>
+            <ul id="navbar" class="navbar">
+                <li id="cancel"><i class="fa-solid fa-solid fa-xmark fa-2x"></i></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../blog">Blog</a></li>
+                <li><a href="../products">Shop</a></li>
+                <li><a href="../contact">Contact Us</a></li>
+                <li id="cart"><a class="active" href="../cart"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a><i id="login1" class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="../cart"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a><i id="login2" class="fa-solid fa-user"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <div id="hero" class="user-login"> Welcome</div>
+
 </body>
+<script src="../js/script.js"></script>
+
 </html>
