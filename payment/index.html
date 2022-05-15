@@ -5,9 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cara Shopping</title>
-    <link rel="icon" href="../img/logo.png" type="image/x-icon"> <!-- title image -->
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Cara Payment Gateway</title>
+    <script type="text/javascript">
+        var url = window.location.origin;
+        var base = document.createElement("base");
+        base.href = url;
+        document.getElementsByTagName("head")[0].appendChild(base);
+    </script>
+    <link rel="icon" href="img/logo.png" type="image/x-icon"> <!-- title image -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
     <script src="https://kit.fontawesome.com/ce8af85eff.js" crossorigin="anonymous"></script>
 </head>
 
@@ -21,20 +27,20 @@
         <button id="signup-btn" class="signup-btn" onclick="window.location='register'">Sign-UP</button>
     </div>
     <section id="header">
-        <a href="../index.html"><img src="../img/logo.png" class="logo" alt="logo"> </a>
+        <a href="index.html"><img src="img/logo.png" class="logo" alt="logo"> </a>
         <div>
             <ul id="navbar" class="navbar">
                 <li id="cancel"><i class="fa-solid fa-solid fa-xmark fa-2x"></i></li>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../blog">Blog</a></li>
-                <li><a href="../products">Shop</a></li>
-                <li><a href="../contact">Contact Us</a></li>
-                <li id="cart"><a href="../cart"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog">Blog</a></li>
+                <li><a href="products">Shop</a></li>
+                <li><a href="contact">Contact Us</a></li>
+                <li id="cart"><a href="cart"><i class="fa-solid fa-cart-shopping"></i></a></li>
                 <li><a><i id="login1" class="fa-solid fa-user"></i></a></li>
             </ul>
         </div>
         <div id="mobile">
-            <a href="../cart"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="cart"><i class="fa-solid fa-cart-shopping"></i></a>
             <a><i id="login2" class="fa-solid fa-user"></i></a>
             <i id="bar" class="fas fa-outdent"></i>
         </div>
@@ -43,6 +49,6 @@
     <div id="hero" class="user-login"> Welcome</div>
 
 </body>
-<script src="../js/script.js"></script>
+<script src="js/script.js"></script>
 
 </html>
