@@ -59,4 +59,4 @@ hero.addEventListener("mouseover", () => {
     if (login_container) {
         login_container.style = "display:none;";
     }
-})
+});
