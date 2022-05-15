@@ -24,22 +24,22 @@ function show_login() {
 
 
 if (bar) {
-    bar.addEventListener("click", function () {
+    bar.addEventListener("mouseover", function () {
         menu();
-        if(login_container){
-        login_container.style = "display:none";
+        if (login_container) {
+            login_container.style = "display:none";
         }
         console.log("Menu event registered");
     });
 }
 
 if (login1 || login2) {
-    login1.addEventListener("click", function () {
+    login1.addEventListener("mouseover", function () {
         show_login();
         console.log("Login1 event registered");
     });
 
-    login2.addEventListener("click", function () {
+    login2.addEventListener("mouseover", function () {
         show_login();
         console.log("Login2 event registered");
     });
@@ -56,7 +56,7 @@ hero.addEventListener("mouseover", () => {
     }
     noMenu();
 
-    if(login_container){
-    login_container.style = "display:none;";
+    if (login_container) {
+        login_container.style = "display:none;";
     }
 })
