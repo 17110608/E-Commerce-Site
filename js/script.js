@@ -24,7 +24,7 @@ function show_login() {
 
 
 if (bar) {
-    bar.addEventListener("click", function () {
+    bar.addEventListener("mouseover", function () {
         menu();
         if(login_container){
         login_container.style = "display:none";
@@ -34,12 +34,12 @@ if (bar) {
 }
 
 if (login1 || login2) {
-    login1.addEventListener("click", function () {
+    login1.addEventListener("mouseover", function () {
         show_login();
         console.log("Login1 event registered");
     });
 
-    login2.addEventListener("click", function () {
+    login2.addEventListener("mouseover", function () {
         show_login();
         console.log("Login2 event registered");
     });
