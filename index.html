@@ -12,8 +12,16 @@
 </head>
 
 <body>
+    <div id="login-container" class="login-container">
+        <h3 id="wel" class="wel">Welcome!</h3>
+        <p id="ac-details" class="ac-details">To View account details</p>
+        <button id="login-btn" class="login-btn" onclick="window.location='login'">Login</button>
+        <hr id="log-hr" class="log-hr">
+        <p id="new-user" class="new-user">New User ?</p>
+        <button id="signup-btn" class="signup-btn" onclick="window.location='register'" >Sign-UP</button>
+    </div>
     <section id="header">
-        <a href="#"><img src="css/logo.png" class="logo" alt="logo"> </a>
+        <a href="index.html"><img src="img/logo.png" class="logo" alt="logo"> </a>
         <div>
             <ul id="navbar" class="navbar">
                 <li id="cancel"><i class="fa-solid fa-solid fa-xmark fa-2x"></i></li>
@@ -22,16 +30,16 @@
                 <li><a href="/products">Shop</a></li>
                 <li><a href="/contact">Contact Us</a></li>
                 <li id="cart"><a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                <li id="login"><a href="#"><i class="fa-solid fa-user"></i></a></li>
+                <li><a><i id="login1" class="fa-solid fa-user"></i></a></li>
             </ul>
         </div>
         <div id="mobile">
            <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
-           <a><i class="fa-solid fa-user"></i></a>
+           <a><i id="login2" class="fa-solid fa-user"></i></a>
            <i id="bar" class="fas fa-outdent"></i>
         </div>
     </section>
-    <section id="hero">
+    <section id="hero" class="home-page">
         <h4>Trade-in-offer</h4>
         <h2 id="">Super value deals</h2>
         <h1>On all Products</h1>
