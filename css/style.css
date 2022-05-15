@@ -106,6 +106,7 @@ p {
 .login-container>.login-btn:hover,
 .login-container>.signup-btn:hover {
     text-transform: uppercase;
+    background-color: #075a54;
 }
 
 #header {
