@@ -34,6 +34,7 @@ if (bar) {
 }
 
 if (login1 || login2) {
+
     login1.addEventListener("mouseover", function () {
         show_login();
         console.log("Login1 event registered");
