@@ -26,7 +26,9 @@ function show_login() {
 if (bar) {
     bar.addEventListener("click", function () {
         menu();
+        if(login_container){
         login_container.style = "display:none";
+        }
         console.log("Menu event registered");
     });
 }
@@ -53,5 +55,8 @@ hero.addEventListener("mouseover", () => {
         login2.removeEventListener("click", show_login);
     }
     noMenu();
-    login_container.style = "display:none;"
+
+    if(login_container){
+    login_container.style = "display:none;";
+    }
 })
