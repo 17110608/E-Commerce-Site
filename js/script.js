@@ -15,7 +15,7 @@ function menu() {
 function noMenu() {
     nav.removeEventListener("mouseout", menu);
     nav.classList.remove("active");
-    console.log("Menu event stopped");;
+    // console.log("Menu event stopped");;
 }
 
 function show_login() {
@@ -29,7 +29,7 @@ if (bar) {
         if (login_container) {
             login_container.style = "display:none";
         }
-        console.log("Menu event registered");
+        // console.log("Menu event registered");
     });
 }
 
@@ -42,7 +42,12 @@ if (login1 || login2) {
 
     login2.addEventListener("mouseover", function () {
         show_login();
-        console.log("Login2 event registered");
+       var style = getComputedStyle(nav).right;
+       if(style !="-300px"){
+           noMenu();
+        //    console.log(style);
+       }
+        // console.log("Login2 event registered");
     });
 }
 
