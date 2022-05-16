@@ -42,7 +42,7 @@ p {
 
 .section-p1 {
 
-    padding: 40px 80px;
+    padding-left:0px;
 }
 
 .section-m1 {
@@ -119,7 +119,7 @@ p {
     background: #E3E6F3;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     z-index: 1;
-    position: relative;
+    position: sticky;
     top: 0;
     left: 0;
 }
@@ -353,7 +353,50 @@ p {
     bottom: 20px;
     right: 10px;
 }
-
+#product11 .pro-container1{
+    display:flex;
+    justify-content: center;
+    padding-top: 20px ;
+    flex-wrap: wrap;
+    padding-left: 0px;
+    
+    }
+    #product11 .pro1{
+        width:30px;
+        min-width: 200px;
+        /* padding:10px 12px; */
+        padding-left:0px;
+       
+        cursor:pointer;
+        /* padding-right: 0px; */
+        /* margin:0px !important; */
+     
+        /* box-shadow: 20px 20px 30px rgba(0, 0,0,0.02); */
+    
+      
+    }
+    #product11 .pro1:hover{
+        box-shadow: 20px 20px 30px rgba(100, 93, 93, 0.09);
+    }
+    #product11 .pro1 img{
+        width:100%;
+      
+    }
+    #product11 .pro1 h5{
+        text-align: center;
+    }
+    .shopw{
+        padding-left: 200px;
+        padding-bottom: 20px;
+        text-align: center;
+        padding-top: 10px;
+    }
+    #product11{
+        /* margin-left: 10%; */
+    }
+    .pro1{
+        margin-left: 0px;
+    }
 ul #cancel {
     display: none;
 }
@@ -440,3 +483,24 @@ ul #cancel {
 
 
 }
+
+
+
+
+
+
+
+
+
+#saree .saree-container11{
+    display:flex;
+    justify-content: center;
+    padding-top: 20% ;
+    flex-wrap: wrap;
+    padding-left: 0px;
+
+    
+    }
+ .saree-container11 .sar1{
+    margin-right: 10%;
+ }
