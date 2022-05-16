@@ -213,7 +213,7 @@ p {
     position: relative;
     background-color: #eff1f7;
     height: 70vh;
-    border-radius: 5px;
+    border-radius: 25px;
     box-shadow: 2px 2px 4px 2px #c9c9e9;
 }
 
@@ -232,7 +232,7 @@ p {
     color: rgb(8, 129, 120);
     border-radius: 25px;
     padding-left: 14px;
-    margin-top: 8px;
+    margin-bottom: 10px;
 }
 
 .fm-input::placeholder {
@@ -256,6 +256,12 @@ p {
     background-color: #075a54;
 }
 
+.button:hover{
+    text-transform: uppercase;
+    background-color: #088178;
+    transform: scale(1.2);
+}
+
 .tp-100px {
     padding-top: 100px;
 }
@@ -276,6 +282,12 @@ p {
     color: #090237;
     font-weight: bold;
     font-size: 16px;
+}
+
+#hero .log-in {
+    /* text-decoration: none; */
+    margin-left: 150px;
+    font-weight: bold;
 }
 
 @keyframes loading {
