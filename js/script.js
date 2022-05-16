@@ -61,3 +61,7 @@ hero.addEventListener("mouseover", () => {
         login_container.style = "display:none;";
     }
 });
+
+hero.addEventListener("mouseover", () =>{
+console.log("Hi");
+});
