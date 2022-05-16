@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatifm-inpute" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cara Register</title>
 
@@ -20,7 +20,7 @@
             <ul id="navbar" class="navbar">
                 <li id="cancel"><i class="fa-solid fa-solid fa-xmark fa-2x"></i></li>
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="../blog">Blog</a></li>
+                <li><a href="../fm-inputog">fm-inputog</a></li>
                 <li><a href="../products">Shop</a></li>
                 <li><a href="../contact">Contact Us</a></li>
 
@@ -36,9 +36,20 @@
         </div>
     </section>
 
-    <div id="hero" class="bg-c"> 
-        <form  class="register-form" name="register" id="register" method="get" action="process.html">
-
+    <div id="hero" class="bg-c center"> 
+        <form  class="register-form tp-50px" name="register" id="register" method="post" action="process.html">
+            <label for="fname" id="fname-l" class="label">First Name</label>
+            <input type="text" class="fm-input" name="fname" placeholder="Enter First Name" required>
+            <label for="lname" id="lname-l" class="label">Last Name</label>
+            <input type="text" class="fm-input" name="lname" placeholder="Enter Last Name">
+            <label for="mob" id="mob-l" class="label">Mobile Number</label>
+            <input type="number" class="fm-input" name="mob" placeholder="Enter Number" required>
+            <label for="email" id="email-l" class="label">Email Address</label>
+            <input type="email" class="fm-input" name="email" placeholder="Enter Email Address">
+            <label for="pwd" id="pwd-l" class="label">Password</label>
+            <input type="password" class="fm-input" name="pwd" placeholder="Set Your Password" required>
+            <br>
+            <input type="submit" class="js-center button" name="submit" value="Submit">
         </form>
     </div>
 

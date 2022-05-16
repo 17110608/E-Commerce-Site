@@ -40,9 +40,14 @@
         </div>
     </section>
 
-    <div id="hero" class="bg-c"> 
-        <form  class="register-form" name="register" id="register" method="get" action="process.html">
-
+    <div id="hero" class="bg-c center"> 
+        <form  class="register-form tp-100px" name="register" id="register" method="post" action="process.html">
+            <label for="email" id="email-l" class="label">Email Address</label>
+            <input type="email" class="block" name="email" placeholder="Enter Email Address">
+            <label for="pwd" id="pwd-l" class="label">Password</label>
+            <input type="password" class="block" name="pwd" placeholder="Set Your Password" required>
+            <br>
+            <input type="submit" class="js-center button" name="submit" value="Submit">
         </form>
     </div>
 

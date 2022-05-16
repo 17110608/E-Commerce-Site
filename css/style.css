@@ -211,7 +211,9 @@ p {
 
 .register-form {
     margin: auto;
+    padding: 10px;
     width: 60%;
+    position: relative;
     background-color: #eff1f7;
     height: 60vh;
     border-radius: 5px;
@@ -220,6 +222,27 @@ p {
 
 .bg-c {
     background-image: url("../img/nature.jpg");
+}
+
+.fm-input {
+    display: block;
+    margin: auto;
+    height: 30px;
+    width: 200px;
+    border-radius: 5px;
+}
+
+.button {
+    height: 30px;
+    width: 200px;
+}
+
+.tp-100px {
+    padding-top: 100px;
+}
+
+.tp-50px {
+    padding-top: 50px;
 }
 
 @keyframes loading {
