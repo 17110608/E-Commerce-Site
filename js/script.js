@@ -107,12 +107,14 @@ if (form.get("submit") == "Register") {
         "email": email,
         "pwd": pwd,
         "products": "",
-    }
+    };
+    
     let pre_check = localStorage.getItem(mob);
 
     if (!pre_check) {
         //Saving user data
         localStorage.setItem(mob, JSON.stringify(userData));
+        window.location.href = "products"
     } else {
         alert("User Already Exist, Please login");
         window.location.href = "login"
