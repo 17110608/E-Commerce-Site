@@ -190,7 +190,7 @@ p {
     align-items: center;
     font-size: 150px;
     font-weight: bold;
-    color:rgb(8, 129, 120);
+    color: rgb(8, 129, 120);
     animation: loading 3s linear infinite;
 }
 
@@ -199,7 +199,7 @@ p {
 }
 
 .pd-left {
-     padding-left: 8vw;
+    padding-left: 8vw;
 }
 
 .center {
@@ -212,7 +212,7 @@ p {
     width: 60%;
     position: relative;
     background-color: #eff1f7;
-    height: 60vh;
+    height: 70vh;
     border-radius: 5px;
     box-shadow: 2px 2px 4px 2px #c9c9e9;
 }
@@ -224,14 +224,36 @@ p {
 .fm-input {
     display: block;
     margin: auto;
-    height: 30px;
-    width: 200px;
-    border-radius: 5px;
+    height: 35px;
+    width: 250px;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    color: rgb(8, 129, 120);
+    border-radius: 25px;
+    padding-left: 14px;
+    margin-top: 8px;
+}
+
+.fm-input::placeholder {
+    color: #075a54;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+.fm-input:focus {
+    box-shadow: 0px 0px 2px 2px rgba(8, 129, 120, 1);
 }
 
 .button {
-    height: 30px;
-    width: 200px;
+    height: 40px;
+    width: 120px;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    background-color: #075a54;
 }
 
 .tp-100px {
@@ -240,6 +262,20 @@ p {
 
 .tp-50px {
     padding-top: 50px;
+}
+
+.u-icon {
+    margin-top: 4px;
+    display: inline-block;
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: rgb(8, 129, 120);
+}
+
+.label {
+    color: #090237;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 @keyframes loading {
@@ -263,7 +299,7 @@ p {
     100% {
         transform: rotate(360deg);
     }
-    
+
 }
 
 
@@ -449,7 +485,7 @@ ul #cancel {
         align-items: center;
         font-size: 100px;
         font-weight: bold;
-        color:rgb(8, 129, 120);
+        color: rgb(8, 129, 120);
         animation: loading 3s linear infinite;
     }
 
@@ -534,4 +570,14 @@ ul #cancel {
     }
 
 
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
 }
