@@ -187,10 +187,50 @@ p {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
-
-
+    /* justify-content: center; */
 }
+
+.process {
+    margin: auto;
+    align-items: center;
+    font-size: 150px;
+    font-weight: bold;
+    color:rgb(8, 129, 120);
+    animation: loading 3s linear infinite;
+}
+
+.js-center {
+    justify-content: center;
+}
+
+.center {
+    text-align: center;
+}
+
+@keyframes loading {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+    
+}
+
 
 .home-page {
     background-image: url("../img/hero4.png");
@@ -255,6 +295,7 @@ p {
 .align-right {
     float: right;
 }
+
 
 #feature .fe-box:nth-child(2) h6 {
     /*  Changing the background color of the container */
@@ -401,6 +442,14 @@ ul #cancel {
         margin-bottom: 25px;
     }
 
+    .js-center {
+        justify-content: center;
+    }
+
+    .center {
+        text-align: center;
+    }
+
     #mobile {
         display: flex;
         align-items: center;
@@ -425,6 +474,7 @@ ul #cancel {
     ul #cancel:hover {
         color: #088178;
     }
+
 
     ul #cart,
     ul #login {
