@@ -68,6 +68,7 @@ hero.addEventListener("mouseover", () => {
 });
 
 
+//Database Coding starts from here
 const form = new URLSearchParams(window.location.search);
 
 if (form.get("submit") == "Login") {
