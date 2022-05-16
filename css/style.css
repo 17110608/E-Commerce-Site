@@ -183,11 +183,9 @@ p {
     width: 100%;
     background-position: top 25% right 0%;
     background-size: cover;
-    padding-left: 8vw;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    /* justify-content: center; */
 }
 
 .process {
@@ -203,8 +201,25 @@ p {
     justify-content: center;
 }
 
+.pd-left {
+     padding-left: 8vw;
+}
+
 .center {
     text-align: center;
+}
+
+.register-form {
+    margin: auto;
+    width: 60%;
+    background-color: #eff1f7;
+    height: 60vh;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px 2px #c9c9e9;
+}
+
+.bg-c {
+    background-image: url("../img/nature.jpg");
 }
 
 @keyframes loading {
