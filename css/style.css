@@ -54,14 +54,13 @@ p {
 }
 
 .login-container {
-    color: #000;
     position: absolute;
     z-index: 3;
     margin-top: 80px;
     margin-right: 10px;
     right: 0;
     display: none;
-    padding-top: 2px;
+    padding-top: 10px;
     padding-left: 12px;
     padding-right: 12px;
     font-weight: 600;
@@ -98,6 +97,7 @@ p {
     border-radius: 4px;
     background: rgb(8, 129, 120);
     background: linear-gradient(45deg, #088178 0%, #088178 100%, #088178 100%);
+    /*For giving texture effect to the button*/
 }
 
 .login-container>.login-btn:hover,
@@ -257,7 +257,7 @@ p {
     background-color: #075a54;
 }
 
-.button:hover{
+.button:hover {
     text-transform: uppercase;
     background-color: #088178;
     transform: scale(1.2);
@@ -499,7 +499,7 @@ footer .logo {
     margin-bottom: 30px;
     margin-top: -36%;
 
-}   
+}
 
 footer h4 {
     font-size: 14px;
@@ -520,7 +520,8 @@ footer a {
     margin-bottom: 10px;
 
 }
-.copyright{
+
+.copyright {
     margin-top: 10%;
 }
 
@@ -586,7 +587,7 @@ ul #cancel {
     }
 
     #hero {
-        height: 50vh;
+        height: 100vh;
         width: 100%;
         background-position: top 25% right 0%;
         background-size: cover;
@@ -595,6 +596,10 @@ ul #cancel {
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
+    }
+
+    .hero-home {
+        height: 50vh !important;
     }
 
     .process {
