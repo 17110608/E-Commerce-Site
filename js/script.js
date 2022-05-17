@@ -41,12 +41,12 @@ if (login1 || login2) {
     });
 
     login2.addEventListener("mouseover", function () {
-        show_login();
         var style = getComputedStyle(nav).right;
         if (style != "-300px") {
             noMenu();
             //    console.log(style);
         }
+        show_login();
         // console.log("Login2 event registered");
     });
 }
@@ -71,6 +71,7 @@ hero.addEventListener("mouseover", () => {
 //Database Coding starts from here
 const form = new URLSearchParams(window.location.search);
 
+//Login process
 if (form.get("submit") == "Login") {
     let mob = form.get("mob");
     let pwd = form.get("pwd");
@@ -93,6 +94,7 @@ if (form.get("submit") == "Login") {
 
 }
 
+//Register Process
 if (form.get("submit") == "Register") {
     let fname = form.get("fname");
     let lname = form.get("lname");
