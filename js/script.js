@@ -5,7 +5,9 @@ const login1 = document.getElementById("login1");
 const login2 = document.getElementById("login2");
 const hero = document.getElementById("hero");
 const login_container = document.getElementById("login-container");
+const blink = document.getElementById("button1");
 
+window.onload = hoverEffect;
 cancel.onclick = noMenu;
 
 function menu() {
@@ -66,7 +68,14 @@ hero.addEventListener("mouseover", () => {
         login_container.style = "display:none;";
     }
 });
-
+function hoverEffect() {
+    console.log("Hii");
+    var blink_speed = 1000; // every 1000 == 1 second, adjust to suit
+    var t = setInterval(function () {
+        var ele = document.getElementById('button1');
+        ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden');
+    }, blink_speed);
+}
 
 //Database Coding starts from here
 const form = new URLSearchParams(window.location.search);
