@@ -637,10 +637,10 @@ ul #cancel {
 
 
 
-#saree .saree-container11{
+/* #saree .saree-container11{
     display:flex;
     justify-content: space-between;
-    padding-top: 30% ;
+    padding-top: 5% ;
     flex-wrap: wrap;
     padding-left: 0px;
    
@@ -656,7 +656,7 @@ ul #cancel {
     border-radius: 25px;
     cursor: pointer;
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
-    margin: 15px 0;
+    margin: 0px 0;
     transition: 0.2s ease;
     position: relative;
 
@@ -668,7 +668,60 @@ ul #cancel {
 }
 .sar1:hover{
     box-shadow: 20px 20px 30px rgba(100, 93, 93, 0.09);
+} */
+#saree {
+    text-align: center;
 }
+
+#saree .saree-container11 {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+
+#saree .sar1 {
+    width: 23%;
+    min-width: 250px;
+   
+    padding: 10px 12px;
+    border: 1px solid #cce7d0;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    margin: 15px 0;
+    transition: 0.2s ease;
+    position: relative;
+    /*  Parent element should be relative when you have to use position absolute in its child */
+}
+#saree .sar1 img {
+    margin-right: 50px;  
+    border-radius: 20px;
+    padding-left: 50px;
+}
+
+#saree .sar1:hover {
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.09);
+
+}
+
+#saree .sar1 .des {
+    text-align: start;
+    padding: 10px 0;
+
+}
+
+#saree .sar1 .des span {
+    color: #606063;
+    font-size: 12px;
+}
+
+#saree .sar1 .des1 h5 {
+    padding-top: 7px;
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -678,5 +731,19 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
     -moz-appearance: textfield;
+
+}
+#ar1{
+    display:none;
+}
+#ar1:target{
+    display:block;
+
+}
+#ar2{
+    display:none;
+}
+#ar2:target{
+    display:block;
 
 }
