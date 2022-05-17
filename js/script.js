@@ -6,6 +6,33 @@ const login2 = document.getElementById("login2");
 const hero = document.getElementById("hero");
 const login_container = document.getElementById("login-container");
 
+//Adding basic js in every page beginning
+let path = window.location.pathname;
+let find = path.split("/");
+let except = find.filter(String)[0];
+let count = find.length - find.filter(String).length;
+//Just adding script except main pages, blog and contact us 
+if(count == 2 && (except != "blog" && except !="contact" && except !="register" && except !="login")){
+let head = document.getElementsByTagName("head");
+let script = document.createElement("script");
+let content = `
+let session = sessionStorage.getItem("user");
+if(session){
+let userName = session.fname + session.lname;
+let email = session.email;
+let cart = session.cart;
+let mob = session.mob;
+}else {
+    window.location = "../index.html"
+}
+`;
+
+//Addding Content
+script.innerHTML = content;
+document.write(head[0].appendChild(script));
+
+}
+
 cancel.onclick = noMenu;
 
 function menu() {
@@ -80,9 +107,23 @@ if (form.get("submit") == "Login") {
 
     if (check) {
         let userData = JSON.parse(check);
+        let fname = userData.fname;
+        let lname = userData.lname;
         let pwd1 = userData.pwd;
+        let cart = userData.cart;
+        //Saving session
+        let session_user = {
+            "fname": fname,
+            "lname": lname,
+            "mob": mob,
+            "email": email,
+            "cart": cart,
+        };
+
         if (pwd == pwd1) {
             window.location.href = "products"
+            //Using session Here
+            sessionStorage.setItem("user", JSON.stringify(session_user));
         } else {
             alert("Invalid User Password");
             window.location.href = "login"
@@ -108,7 +149,15 @@ if (form.get("submit") == "Register") {
         "mob": mob,
         "email": email,
         "pwd": pwd,
-        "products": "",
+        "cart": "",
+    };
+
+    let session_user = {
+        "fname": fname,
+        "lname": lname,
+        "mob": mob,
+        "email": email,
+        "cart": "",
     };
     
     let pre_check = localStorage.getItem(mob);
@@ -116,6 +165,7 @@ if (form.get("submit") == "Register") {
     if (!pre_check) {
         //Saving user data
         localStorage.setItem(mob, JSON.stringify(userData));
+        sessionStorage.setItem("user", JSON.stringify(session_user));
         window.location.href = "products"
     } else {
         alert("User Already Exist, Please login");
