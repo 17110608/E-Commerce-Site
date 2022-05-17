@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatifm-inpute" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cara Register</title>
 
@@ -36,7 +36,24 @@
         </div>
     </section>
 
-    <div id="hero" class="user-login"> Welcome</div>
+    <div id="hero" class="bg-c"> 
+        <form  class="register-form center" name="register" id="register" method="get" action="../process.html">
+            <h6><i class="fa-solid fa-circle-user u-icon"></i></h6>
+            <label for="fname" id="fname-l" class="label">First Name</label>
+            <input type="text" class="fm-input" name="fname" placeholder="&#128100; Enter First Name" required>
+            <label for="lname" id="lname-l" class="label">Last Name</label>
+            <input type="text" class="fm-input" name="lname" placeholder="&#128100; Enter Last Name">
+            <label for="mob" id="mob-l" class="label">Mobile Number</label>
+            <input type="number" class="fm-input" name="mob" placeholder="&#128241; Enter Number" required>
+            <label for="email" id="email-l" class="label">Email Address</label>
+            <input type="email" class="fm-input" name="email" placeholder="&#128231; Enter Email Address">
+            <label for="pwd" id="pwd-l" class="label">Password</label>
+            <input type="password" class="fm-input" name="pwd" minlength="6" minlength="32" placeholder="&#128273; Set Your Password" required>
+            <a class="log-in" id="register-in" href="../login">Login Now</a>
+            <br><br>
+            <input type="submit" class="js-center button" name="submit" value="Register">
+        </form>
+    </div>
 
 </body>
 <script src="../js/script.js"></script>
