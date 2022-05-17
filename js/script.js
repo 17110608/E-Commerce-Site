@@ -33,13 +33,14 @@ log_btn.onclick = end_session
 log_title = document.getElementById("ac-details");
 log_title.innerHTML = "Hi, " + userName;
 
-//Hiding few element from login-container
-let icon = document.getElementById("uname1").innerHTML;
-document.getElementById("uname1").innerHTML = icon + " " + session.fname;
-//Smaller size screen
+//Large size screen
+// let icon = document.getElementById("uname1").innerHTML;
+// document.getElementById("uname1").innerHTML = icon + " " + session.fname;
+// Smaller size screen
 // let icon2 = document.getElementById("uname2").innerHTML;
 // document.getElementById("uname2").innerHTML = icon2 + " " + session.fname;
 
+//Hiding few element from login-container
 document.getElementById("new-user").innerHTML = "Email: " + email +"<br>"+"Mob: " + mob;
 document.getElementById("new-user").style = "word-wrap: break-word";
 document.getElementById("signup-btn").style = "display:none";
