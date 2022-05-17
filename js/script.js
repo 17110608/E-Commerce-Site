@@ -11,17 +11,39 @@ let path = window.location.pathname;
 let find = path.split("/");
 let except = find.filter(String)[0];
 let count = find.length - find.filter(String).length;
-//Just adding script except main pages, blog and contact us 
+//Just adding script except main pages, blog, login, register and contact us 
 if(count == 2 && (except != "blog" && except !="contact" && except !="register" && except !="login")){
+// Creating Script to head
 let head = document.getElementsByTagName("head");
 let script = document.createElement("script");
 let content = `
-let session = sessionStorage.getItem("user");
+let session = JSON.parse(sessionStorage.getItem("user"));
 if(session){
-let userName = session.fname + session.lname;
+let userName = session.fname +" "+ session.lname;
 let email = session.email;
 let cart = session.cart;
 let mob = session.mob;
+let address = session.address;
+
+//Modifying the login-container DOM
+log_btn = document.getElementById("login-btn");
+log_btn.innerHTML = "Log Out";
+log_btn.onclick = end_session
+
+log_title = document.getElementById("ac-details");
+log_title.innerHTML = "Hi, " + userName;
+
+//Hiding few element from login-container
+let icon = document.getElementById("uname1").innerHTML;
+document.getElementById("uname1").innerHTML = icon + " " + session.fname;
+//Smaller size screen
+// let icon2 = document.getElementById("uname2").innerHTML;
+// document.getElementById("uname2").innerHTML = icon2 + " " + session.fname;
+
+document.getElementById("new-user").innerHTML = "Email: " + email +"<br>"+"Mob: " + mob;
+document.getElementById("new-user").style = "word-wrap: break-word";
+document.getElementById("signup-btn").style = "display:none";
+
 }else {
     window.location = "../index.html"
 }
@@ -37,6 +59,11 @@ cancel.onclick = noMenu;
 
 function menu() {
     nav.classList.add("active");
+}
+
+function end_session() {
+    sessionStorage.removeItem("user");
+    window.location ="../login"
 }
 
 function noMenu() {
@@ -62,11 +89,14 @@ if (bar) {
 
 if (login1 || login2) {
 
+    if(login1){
     login1.addEventListener("mouseover", function () {
         show_login();
         console.log("Login1 event registered");
     });
+}
 
+if(login2){
     login2.addEventListener("mouseover", function () {
         var style = getComputedStyle(nav).right;
         if (style != "-300px") {
@@ -76,6 +106,7 @@ if (login1 || login2) {
         show_login();
         // console.log("Login2 event registered");
     });
+}
 }
 
 
@@ -109,8 +140,12 @@ if (form.get("submit") == "Login") {
         let userData = JSON.parse(check);
         let fname = userData.fname;
         let lname = userData.lname;
+        let email = userData.email;
+        let mob = userData.mob;
         let pwd1 = userData.pwd;
         let cart = userData.cart;
+        let address = userData.address;
+
         //Saving session
         let session_user = {
             "fname": fname,
@@ -118,7 +153,9 @@ if (form.get("submit") == "Login") {
             "mob": mob,
             "email": email,
             "cart": cart,
+            "address": address
         };
+
 
         if (pwd == pwd1) {
             window.location.href = "products"
@@ -150,6 +187,7 @@ if (form.get("submit") == "Register") {
         "email": email,
         "pwd": pwd,
         "cart": "",
+        "address": ""
     };
 
     let session_user = {
@@ -158,6 +196,7 @@ if (form.get("submit") == "Register") {
         "mob": mob,
         "email": email,
         "cart": "",
+        "address": ""
     };
     
     let pre_check = localStorage.getItem(mob);
