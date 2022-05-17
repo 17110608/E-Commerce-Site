@@ -42,11 +42,11 @@ if (login1 || login2) {
 
     login2.addEventListener("mouseover", function () {
         show_login();
-       var style = getComputedStyle(nav).right;
-       if(style !="-300px"){
-           noMenu();
-        //    console.log(style);
-       }
+        var style = getComputedStyle(nav).right;
+        if (style != "-300px") {
+            noMenu();
+            //    console.log(style);
+        }
         // console.log("Login2 event registered");
     });
 }
@@ -66,3 +66,58 @@ hero.addEventListener("mouseover", () => {
         login_container.style = "display:none;";
     }
 });
+
+
+//Database Coding starts from here
+const form = new URLSearchParams(window.location.search);
+
+if (form.get("submit") == "Login") {
+    let mob = form.get("mob");
+    let pwd = form.get("pwd");
+
+    let check = localStorage.getItem(mob);
+
+    if (check) {
+        let userData = JSON.parse(check);
+        let pwd1 = userData.pwd;
+        if (pwd == pwd1) {
+            window.location.href = "products"
+        } else {
+            alert("Invalid User Password");
+            window.location.href = "login"
+        }
+    } else {
+        alert("User Not Exist");
+        window.location.href = "register"
+    }
+
+}
+
+if (form.get("submit") == "Register") {
+    let fname = form.get("fname");
+    let lname = form.get("lname");
+    let mob = form.get("mob");
+    let email = form.get("email");
+    let pwd = form.get("pwd");
+
+    let userData = {
+        "fname": fname,
+        "lname": lname,
+        "mob": mob,
+        "email": email,
+        "pwd": pwd,
+        "products": "",
+    };
+    
+    let pre_check = localStorage.getItem(mob);
+
+    if (!pre_check) {
+        //Saving user data
+        localStorage.setItem(mob, JSON.stringify(userData));
+        window.location.href = "products"
+    } else {
+        alert("User Already Exist, Please login");
+        window.location.href = "login"
+    }
+
+}
