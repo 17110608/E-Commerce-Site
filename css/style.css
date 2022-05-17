@@ -208,6 +208,14 @@ p {
     text-align: center;
 }
 
+.block {
+    display: block !important;
+}
+
+.tp-half {
+    margin-top: 50%;
+}
+
 .register-form {
     margin: auto;
     padding: 10px;
