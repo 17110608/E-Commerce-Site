@@ -84,7 +84,7 @@ if (bar) {
 
 //If login1 user id or login2 user id is available in page then run the following code
 if (login1 || login2) {
-//Run if login1 id element is available in page
+    //Run if login1 id element is available in page
     if (login1) {
         //Adding event mousehover to show the login-container after hover
         login1.addEventListener("mouseover", function () {
@@ -92,8 +92,8 @@ if (login1 || login2) {
             console.log("Login1 event registered");
         });
     }
-//Run if login2 id element is available in page
-//Works only for mobile width or mode
+    //Run if login2 id element is available in page
+    //Works only for mobile width or mode
     if (login2) {
         //Adding event mousehover to show the login-container after hover
         login2.addEventListener("mouseover", function () {
@@ -120,7 +120,7 @@ hero.addEventListener("mouseover", () => {
         //for large screen user icon, removing the attached event, if it is active
         login1.removeEventListener("mouseover", show_login);
     }
-     //for large screen user icon, removing the attached event, if it is active
+    //for large screen user icon, removing the attached event, if it is active
     if (login2) {
         login2.removeEventListener("mouseover", show_login);
     }
@@ -146,7 +146,7 @@ if (form.get("submit") == "Login") {
 
     //Checking with the local database to verify the user and here key value type database so we passing key as the number
     let check = localStorage.getItem(mob);
-//if number present proceed
+    //if number present proceed
     if (check) {
         let userData = JSON.parse(check);
         let fname = userData.fname;
@@ -167,7 +167,7 @@ if (form.get("submit") == "Login") {
             "address": address
         };
 
-//Check the stored user password with present submit password both matching create session else through alert
+        //Check the stored user password with present submit password both matching create session else through alert
         if (pwd == pwd1) {
             window.location.href = "products"
             //Using session Here 
@@ -194,7 +194,7 @@ if (form.get("submit") == "Register") {
     let mob = form.get("mob");
     let email = form.get("email");
     let pwd = form.get("pwd");
-//Creating the user details object to save it in local database
+    //Creating the user details object to save it in local database
     let userData = {
         "fname": fname,
         "lname": lname,
@@ -204,7 +204,7 @@ if (form.get("submit") == "Register") {
         "cart": "",
         "address": ""
     };
-//This one for session purpose, we can use previous one also but there password also contains that will be not good practice
+    //This one for session purpose, we can use previous one also but there password also contains that will be not good practice
     let session_user = {
         "fname": fname,
         "lname": lname,
@@ -213,9 +213,9 @@ if (form.get("submit") == "Register") {
         "cart": "",
         "address": ""
     };
-//Before that make user based on the user number no account is present
+    //Before that make user based on the user number no account is present
     let pre_check = localStorage.getItem(mob);
-//If no account is there then create new one
+    //If no account is there then create new one
     if (!pre_check) {
         //Saving user data
         localStorage.setItem(mob, JSON.stringify(userData));
