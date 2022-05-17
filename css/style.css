@@ -386,6 +386,10 @@ p {
     float: left;
 }
 
+.fx-col {
+    flex-direction: column;
+}
+
 @keyframes loading {
 
     0% {
