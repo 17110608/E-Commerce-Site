@@ -221,6 +221,10 @@ p {
 
 .bg-c {
     background-image: url("../img/nature.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .fm-input {
@@ -650,6 +654,7 @@ ul #cancel {
         align-items: flex-start;
         justify-content: center;
     }
+
 
     .hero-home {
         height: 50vh !important;
