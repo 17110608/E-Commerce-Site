@@ -22,7 +22,7 @@ if (session && (except == "login" || except == "register")) {
     window.location = "../products";
 }
 
-//if session is not active and user visited cart and products page redirect him to login page
+//if session is not active and user visited cart and products page then we redirect him to login page
 if (!session && (except == "cart" || except == "products")) {
     window.location = "../login";
 }
