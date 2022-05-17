@@ -209,10 +209,10 @@ p {
 .register-form {
     margin: auto;
     padding: 10px;
-    width: 60%;
+    width: 80%;
     position: relative;
     background-color: #eff1f7;
-    height: 70vh;
+    height: 80vh;
     border-radius: 25px;
     box-shadow: 2px 2px 4px 2px #c9c9e9;
 }
@@ -227,7 +227,7 @@ p {
     height: 35px;
     width: 250px;
     border: none;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 16px;
     color: rgb(8, 129, 120);
     border-radius: 25px;
@@ -237,7 +237,7 @@ p {
 
 .fm-input::placeholder {
     color: #075a54;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 16px;
 }
 
