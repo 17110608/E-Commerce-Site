@@ -390,6 +390,18 @@ p {
     flex-direction: column;
 }
 
+.total-price {
+    font-size: 28px;
+}
+
+.prd-total, .sb-price, .tx-price, .del-price {
+    float: right;
+}
+
+.prd-check {
+    height: 50px;
+}
+
 @keyframes loading {
 
     0% {

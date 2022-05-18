@@ -46,7 +46,7 @@
                 <h4 class="prd-head"> Products in Cart <i class="fa-solid fa-cart-shopping"></i></h4>
                 <!-- From here the products list begins -->
                 <li class="fx-list">
-                    <i class="fa-solid fa-xmark prd-cancel" onclick="alert(1)"></i>
+                    <i class="fa-solid fa-xmark prd-cancel" onclick=""></i>
                     <img class="prd-img" src="../img/products/f1.jpg">
                     <h4 class="prd-price">
                         Price
@@ -95,17 +95,17 @@
                 <hr> -->
             </div>
             <div id="prd-ch" class="prd-ch">
-                <h2 class="total-price">Total</h2>
+                <h2 class="total-price">Total: <span class="prd-total" id="prd-total"> 648Rs</span></h2>
                 <hr>
-                <h4 class="sb-title">Sub Total: <span id="sb-price"> 200Rs</span></h4>
-                <h4 class="sb-title">With Tax: <span id="tx-price"> 30Rs</span></h4>
-                <h4 class="sb-title">Delivery Charges: <span id="del-price"> 50Rs</span></h4>
+                <h4 class="sb-title">Sub Total: <span class="sb-price" id="sb-price"> 200Rs</span></h4>
+                <h4 class="sb-title">With Tax: <span class="tx-price" id="tx-price"> 30Rs</span></h4>
+                <h4 class="sb-title">Delivery Charges: <span class="del-price"id="del-price"> 50Rs</span></h4>
                 <select id="del-meth" class="del-meth">
                     <option value="std">Stanadard Delivery(Free)</option>
                     <option valu="exp">Fast Delivery(Paid)</option>
                 </select>
                 <br>
-                <input type="submit" id="checkout" value="Checkout" onclick="alert(1)">
+                <input type="submit" id="checkout" class="prd-check" value="Checkout" onclick="alert(1)">
                 <h5>WE ACCEPT</h5>
                 <div class="fx-list fx-col">
                     <!-- <img src="https://cdn-icons-png.flaticon.com/512/174/174861.png" class="">
