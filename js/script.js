@@ -1,3 +1,4 @@
+//Getting all require elements document id's here
 const bar = document.getElementById("bar");
 const nav = document.getElementById("navbar");
 const cancel = document.getElementById("cancel");
@@ -7,7 +8,7 @@ const hero = document.getElementById("hero");
 const login_container = document.getElementById("login-container");
 const blink = document.getElementById("button1");
 
-
+//To animate the home page offer button
 window.onload = hoverEffect;
 
 //Getting the path of page with query parameters
@@ -136,14 +137,42 @@ hero.addEventListener("mouseover", () => {
         login_container.style = "display:none;";
     }
 });
+
 function hoverEffect() {
-    console.log("Hii");
+    // console.log("Hii");
     var blink_speed = 1000; // every 1000 == 1 second, adjust to suit
-    var t = setInterval(function () {
-        var ele = document.getElementById('button1');
-        ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden');
-    }, blink_speed);
+    var ele_ch = document.getElementById('button1');
+    if (ele_ch) {
+        var t = setInterval(function () {
+            var ele = document.getElementById('button1');
+            ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden');
+        }, blink_speed);
+    }
 }
+
+
+//Cart page Code starts from here
+//getting select option id and running function on option selection
+let dl = document.getElementById("del-meth")
+if(dl){
+dl.onchange = delivery;
+}
+
+//This function will be called when user selects delivery method
+function delivery() {
+    let delivery = document.getElementById("del-meth").value;
+    let show = document.getElementById("delivery-pirce");
+    //Show delivery fee if user selects express delivery
+    if (delivery == "exp") {
+        show.style = "display:block";
+    } //else hide the delivery fee 
+    else {
+        show.style = "display:none;"
+    }
+
+}
+
+//Cart page Code ends here
 
 //Database Coding starts from here
 //URLSearchParams is the standard object inside the object we passing query parameters to filter the required data
@@ -152,11 +181,11 @@ const form = new URLSearchParams(window.location.search);
 //Login process
 if (form.get("submit") == "Login") {
     //Getting the field values using get method which is the method of that URLSearchParams
-    let mob = form.get("mob");
+    let email = form.get("email");
     let pwd = form.get("pwd");
 
     //Checking with the local database to verify the user and here key value type database so we passing key as the number
-    let check = localStorage.getItem(mob);
+    let check = localStorage.getItem(email);
     //if number present proceed
     if (check) {
         let userData = JSON.parse(check);
@@ -178,7 +207,7 @@ if (form.get("submit") == "Login") {
             "address": address
         };
 
-        //Check the stored user password with present submit password both matching create session else through alert
+        //Check the stored user password with present submit password, if both matching then create session else through alert
         if (pwd == pwd1) {
             window.location.href = "products"
             //Using session Here 
@@ -225,11 +254,11 @@ if (form.get("submit") == "Register") {
         "address": ""
     };
     //Before that make user based on the user number no account is present
-    let pre_check = localStorage.getItem(mob);
+    let pre_check = localStorage.getItem(email);
     //If no account is there then create new one
     if (!pre_check) {
         //Saving user data
-        localStorage.setItem(mob, JSON.stringify(userData));
+        localStorage.setItem(email, JSON.stringify(userData));
         //Creating the session data to get data later on
         sessionStorage.setItem("user", JSON.stringify(session_user));
         //Also redirect user to products page

@@ -22,20 +22,21 @@
     </div>
     <section id="header">
         <a href="../index.html"><img src="../img/logo.png" class="logo" alt="logo"> </a>
-        <div>
+        <div id="desktop">
             <ul id="navbar" class="navbar">
-                <li id="cancel"><i class="fa-solid fa-xmark fa-2x"></i></li>
+                <li id="cancel"><i class="fa-solid fa-solid fa-xmark fa-2x"></i></li>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../blog">Blog</a></li>
-                <li><a href="../products">Shop</a></li>
+                <li><a class="active" href="../products">Shop</a></li>
                 <li><a href="../contact">Contact Us</a></li>
-                <li id="cart"><a class="active" href="../cart"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                <li><a id="uname1"><i id="login1" class="fa-solid fa-user"></i></a> </li>
+                <li id="cart"><a href="../cart"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a><i id="login1" class="fa-solid fa-user"></i></a></li>
             </ul>
         </div>
         <div id="mobile">
+
             <a href="../cart"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a><i id="uname2" id="login2" class="fa-solid fa-user"></i></a>
+            <a><i id="login2" class="fa-solid fa-user"></i></a>
             <i id="bar" class="fas fa-outdent"></i>
         </div>
     </section>
@@ -43,7 +44,7 @@
     <div id="hero" class="block no-padd">
         <div id="product" class="product">
             <div id="prd-lis" class="prd-list inline">
-                <h4 class="prd-head"> Products in Cart <i class="fa-solid fa-cart-shopping"></i></h4>
+                <h4 class="prd-head"> Products in Cart <i class="fa-solid fa-cart-shopping"></i></h4><br>
                 <!-- From here the products list begins -->
                 <li class="fx-list">
                     <i class="fa-solid fa-xmark prd-cancel" onclick=""></i>
@@ -69,7 +70,7 @@
 
                 </li>
                 <hr>
-<!-- 
+
                 <li class="fx-list">
                     <i class="fa-solid fa-xmark prd-cancel"></i>
                     <img class="prd-img" src="../img/products/f2.jpg">
@@ -92,27 +93,28 @@
                         Other element
                     </h6>
                 </li>
-                <hr> -->
+                <hr>
             </div>
             <div id="prd-ch" class="prd-ch">
                 <h2 class="total-price">Total: <span class="prd-total" id="prd-total"> 648Rs</span></h2>
                 <hr>
                 <h4 class="sb-title">Sub Total: <span class="sb-price" id="sb-price"> 200Rs</span></h4>
                 <h4 class="sb-title">With Tax: <span class="tx-price" id="tx-price"> 30Rs</span></h4>
-                <h4 class="sb-title">Delivery Charges: <span class="del-price"id="del-price"> 50Rs</span></h4>
+                <h4 class="sb-title" id="delivery-pirce" >Delivery Charges: <span class="del-price"id="del-price"> 50Rs</span></h4>
                 <select id="del-meth" class="del-meth">
                     <option value="std">Stanadard Delivery(Free)</option>
-                    <option valu="exp">Fast Delivery(Paid)</option>
+                    <option value="exp">Fast Delivery(Paid)</option>
                 </select>
                 <br>
-                <input type="submit" id="checkout" class="prd-check" value="Checkout" onclick="alert(1)">
+                <input type="submit" id="checkout" class="prd-check" value="Checkout" onclick="">
+                <br>
                 <h5>WE ACCEPT</h5>
-                <div class="fx-list fx-col">
-                    <!-- <img src="https://cdn-icons-png.flaticon.com/512/174/174861.png" class="">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174861.png" class="">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174861.png" class="">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174861.png" class="">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174861.png" class=""> -->
+                <div class="fx-list fx-col fx-display">
+                    <img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" class="payment">
+                    <img src="https://cdn-icons-png.flaticon.com/512/217/217445.png" class="payment">
+                    <img src="https://cdn-icons-png.flaticon.com/512/349/349228.png" class="payment">
+                    <img src="https://cdn-icons-png.flaticon.com/512/825/825454.png" class="payment">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174861.png" class="payment">
                 </div>
             </div>
         </div>
