@@ -249,6 +249,7 @@ p {
     margin-bottom: 10px;
 }
 
+/* For smaller screens we reducing the width */
 @media screen and (min-width: 820px){
     .fm-input {
         width: 40%;
