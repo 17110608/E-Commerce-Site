@@ -296,6 +296,7 @@ p {
     color: #090237;
     font-weight: bold;
     font-size: 16px;
+    white-space: nowrap
 }
 
 #hero .log-in {
@@ -313,7 +314,7 @@ p {
 }
 
 .inline {
-    display: inline;
+    display: inline !important;
 }
 
 .prd-list {
@@ -694,6 +695,15 @@ ul #cancel {
 
 #login1 {
     cursor: pointer;
+}
+
+.flex-box {
+    display: flex !important;
+    justify-content: center;
+}
+
+.ml-10px {
+    margin-left: 10px;
 }
 
 
