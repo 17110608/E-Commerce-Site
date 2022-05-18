@@ -239,7 +239,7 @@ p {
     display: block;
     margin: auto;
     height: 35px;
-    width: 250px;
+    width: 100%;
     border: none;
     font-weight: bold;
     font-size: 16px;
@@ -247,6 +247,16 @@ p {
     border-radius: 25px;
     padding-left: 14px;
     margin-bottom: 10px;
+}
+
+@media screen and (min-width: 820px){
+    .fm-input {
+        width: 40%;
+    }
+
+    .fm-sp {
+        width: 100%;
+    }
 }
 
 .fm-input::placeholder {
@@ -699,6 +709,12 @@ ul #cancel {
 
 .flex-box {
     display: flex !important;
+    justify-content: center;
+}
+
+.flex-box1 {
+    display: flex !important;
+    flex-direction: column;
     justify-content: center;
 }
 
