@@ -320,6 +320,15 @@ p {
     margin-left: 250px;
 }
 
+.accept {
+    font-size: 20px;
+    color: #088178;
+}
+
+.fx-pay {
+    margin-top: 10px !important;
+}
+
 @media screen and (max-width: 820px) {
     .label-mr {
         margin-left: 0px;
@@ -472,7 +481,7 @@ p {
 }
 
 .prd-check {
-    height: 100px;
+    height: 60px;
     /* padding: 15px; */
     color: #fff;
     background-color: #088178;
@@ -802,6 +811,9 @@ ul #cancel {
     margin-left: 10px;
 }
 
+.fx-height {
+    height: 12vh !important;
+}
 
 
 @media screen and (max-width: 820px) {
