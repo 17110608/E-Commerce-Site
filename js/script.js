@@ -195,6 +195,7 @@ if (form.get("submit") == "Login") {
         let mob = userData.mob;
         let pwd1 = userData.pwd;
         let cart = userData.cart;
+        let purchase = userData.purchase;
         let address = userData.address;
 
         //Saving session
@@ -204,6 +205,7 @@ if (form.get("submit") == "Login") {
             "mob": mob,
             "email": email,
             "cart": cart,
+            "purchase": purchase,
             "address": address
         };
 
@@ -242,6 +244,7 @@ if (form.get("submit") == "Register") {
         "email": email,
         "pwd": pwd,
         "cart": "",
+        "purchase": "",
         "address": ""
     };
     //This one for session purpose, we can use previous one also but there password also contains that will be not good practice
@@ -251,6 +254,7 @@ if (form.get("submit") == "Register") {
         "mob": mob,
         "email": email,
         "cart": "",
+        "purchase": "",
         "address": ""
     };
     //Before that make user based on the user number no account is present
