@@ -10,7 +10,7 @@ const blink = document.getElementById("button1");
 
 window.onload = hoverEffect;
 
-//Adding basic js in every page beginning
+//Getting the path of page with query parameters
 let path = window.location.pathname;
 let find = path.split("/");
 let except = find.filter(String)[0];
