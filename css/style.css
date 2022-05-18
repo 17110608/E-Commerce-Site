@@ -489,6 +489,22 @@ p {
     border-radius: 10px;
 }
 
+input[type="submit"], select, button {
+    cursor: pointer;
+}
+
+/* Checkout page CSS starts here */
+
+.checkout {
+    width: 80%;
+    height: 65vh;
+    background-color: rgb(247, 241, 241);
+    margin: auto;
+    border-radius: 5px;
+}
+
+/* Checkout page CSS ends here */
+
 @keyframes loading {
 
     0% {
