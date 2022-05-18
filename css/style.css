@@ -490,10 +490,10 @@ p {
     }
     #product11 .pro1{
         width:30px;
-        min-width: 200px;
+        min-width: 500px;
         /* padding:10px 12px; */
         padding-left:0px;
-       
+       margin-top: 30px;
         cursor:pointer;
         /* padding-right: 0px; */
         /* margin:0px !important; */
@@ -521,6 +521,9 @@ p {
     
     .pro1{
         margin-left: 0px;
+    }
+    #product11{
+        margin-top: 20%;
     }
 
 
@@ -730,6 +733,20 @@ ul #cancel {
     .navbar #login1 {
         display: none;
     }
+    #product11 .pro-container1 {
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+        flex-wrap: wrap;
+        margin: 0px 0px;
+       
+    }
+    .product11{
+        margin-top: 30%;
+    }
+    #page-header1{
+        margin-top: ;
+    }
 
 
 }
@@ -788,22 +805,22 @@ ul #cancel {
 
 #saree .sar1 {
     width: 23%;
-    min-width: 250px;
+    min-width: 650px;
    
-    padding: 10px 12px;
-    border: 1px solid #cce7d0;
-    border-radius: 25px;
+    padding: 5px 5px;
+    /* border: 1px solid #cce7d0;
+    border-radius: 15px; */
     cursor: pointer;
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
-    margin: 15px 0;
+    /* box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02); */
+    margin: 5px 10;
     transition: 0.2s ease;
     position: relative;
     /*  Parent element should be relative when you have to use position absolute in its child */
 }
 #saree .sar1 img {
-    margin-right: 50px;  
+    /* margin-right: 10px;   */
     border-radius: 20px;
-    padding-left: 50px;
+    padding-left: 5px;
 }
 
 #saree .sar1:hover {
@@ -812,7 +829,7 @@ ul #cancel {
 }
 
 #saree .sar1 .des {
-    text-align: start;
+    text-align: center;
     padding: 10px 0;
 
 }
@@ -844,9 +861,11 @@ input[type=number] {
     max-width: 230px;
    
     /* margin-right: 50px; */
-    border: 2px solid #cce7d0;
+    border: 1px solid #cce7d0;
     border-radius: 25px;
     /* margin: 20px 20px; */
+    
+   
    
   
    
@@ -866,8 +885,9 @@ input[type=number] {
     min-width: 330px;
     /* margin-right: 30%; */
     border-width: 20px;
-    margin-left: 30px;
+    margin:15px 0;
     text-align: center;
+   
 }
 #prodetails .single-pro-detail h4{
     padding:40px 0  20px 0;
