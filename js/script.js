@@ -16,11 +16,11 @@ let find = path.split("/");
 let except = find.filter(String)[0];
 let count = find.length - find.filter(String).length;
 //Just adding script except main pages, blog, login, register and contact us 
-if(count == 2 && (except != "blog" && except !="contact" && except !="register" && except !="login")){
-// Creating Script to head
-let head = document.getElementsByTagName("head");
-let script = document.createElement("script");
-let content = `
+if (count == 2 && (except != "blog" && except != "contact" && except != "register" && except != "login")) {
+    // Creating Script to head
+    let head = document.getElementsByTagName("head");
+    let script = document.createElement("script");
+    let content = `
 let session = JSON.parse(sessionStorage.getItem("user"));
 if(session){
 let userName = session.fname +" "+ session.lname;
@@ -54,9 +54,9 @@ document.getElementById("signup-btn").style = "display:none";
 }
 `;
 
-//Addding Content
-script.innerHTML = content;
-document.write(head[0].appendChild(script));
+    //Addding Content
+    script.innerHTML = content;
+    document.write(head[0].appendChild(script));
 
 }
 
@@ -68,7 +68,7 @@ function menu() {
 
 function end_session() {
     sessionStorage.removeItem("user");
-    window.location ="../login"
+    window.location = "../login"
 }
 
 function noMenu() {
@@ -94,24 +94,24 @@ if (bar) {
 
 if (login1 || login2) {
 
-    if(login1){
-    login1.addEventListener("mouseover", function () {
-        show_login();
-        console.log("Login1 event registered");
-    });
-}
+    if (login1) {
+        login1.addEventListener("mouseover", function () {
+            show_login();
+            console.log("Login1 event registered");
+        });
+    }
 
-if(login2){
-    login2.addEventListener("mouseover", function () {
-        var style = getComputedStyle(nav).right;
-        if (style != "-300px") {
-            noMenu();
-            //    console.log(style);
-        }
-        show_login();
-        // console.log("Login2 event registered");
-    });
-}
+    if (login2) {
+        login2.addEventListener("mouseover", function () {
+            var style = getComputedStyle(nav).right;
+            if (style != "-300px") {
+                noMenu();
+                //    console.log(style);
+            }
+            show_login();
+            // console.log("Login2 event registered");
+        });
+    }
 }
 
 
@@ -129,6 +129,7 @@ hero.addEventListener("mouseover", () => {
         login_container.style = "display:none;";
     }
 });
+
 function hoverEffect() {
     console.log("Hii");
     var blink_speed = 1000; // every 1000 == 1 second, adjust to suit
@@ -136,6 +137,38 @@ function hoverEffect() {
         var ele = document.getElementById('button1');
         ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden');
     }, blink_speed);
+}
+
+//For slider
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {
+        slideIndex = 1
+    }
+    if (n < 1) {
+        slideIndex = slides.length
+    }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
 }
 
 //Database Coding starts from here
@@ -210,7 +243,7 @@ if (form.get("submit") == "Register") {
         "cart": "",
         "address": ""
     };
-    
+
     let pre_check = localStorage.getItem(mob);
 
     if (!pre_check) {
