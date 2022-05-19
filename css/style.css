@@ -707,12 +707,7 @@ ul #cancel {
     cursor: pointer;
 }
 
-<<<<<<< HEAD
-/* For slide effect */
-/* .mySlides {
-    display: none;
-} */
-=======
+
 .flex-box {
     display: flex !important;
     justify-content: center;
@@ -728,7 +723,7 @@ ul #cancel {
     margin-left: 10px;
 }
 
->>>>>>> dbd38efef167a9ab0fd9bf1d154a0200b47dfc88
+
 
 .Product {
     vertical-align: middle;
