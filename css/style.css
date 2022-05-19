@@ -731,102 +731,111 @@ ul #cancel {
 
 }
 
-/* Slideshow container */
-.slideshow-container {
+
+.fepro{
+    margin-left: 38%;
+}
+/*  SLIDES PRODUCTS */
+.product {
     position: relative;
+    overflow: hidden;
+    padding: 20px;
+  }
+  
+  .product-container {
+    padding: 0 10vw;
     display: flex;
-    padding: 10px;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around !important;
-    /* margin: auto;  */
-}
+    overflow-x: auto;
+   scroll-behavior: smooth;
+    margin-top:5%;
+  }
+  
+  .product-container::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hides the scroll bar */
+  .product-card {
+    flex: 0 0 auto;
+    width: 250px;
+    height: 400px;
+    margin-right: 40px;
+  }
 
-/* The dots/bullets/indicators */
-.dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
-.dot.active {
-    background-color: #3b3939;
-}
-
-/* Fading animation:Gives smoothnes when you go next and prev */
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-.slideshow-container .des {
-    text-align: left;
-    padding-top: 10px;
-
-    line-height: 25px;
-    
-}
-
-.procart {
-    margin-right: 95%;
-    margin-top: 3%;
-}
-
-@keyframes fade {
-    from {
-        opacity: .4
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
-.prev,
-.next {
-    cursor: pointer;
+  .product-card:hover .card-btn {
+    opacity: 1;
+  }
+  
+ 
+  
+  
+  .pre-btn,
+  .nxt-btn {
+    border: none;
+    width: 10vw;
+    height: 100%;
     position: absolute;
-    top: 36%;
-    width: auto;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-
-.next {
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #E3E6F3 100%); 
+    cursor: pointer;
+    z-index: 8;
+    margin-top:-5%;
+  }
+  
+  .pre-btn {
+    left: 0;
+    transform: rotate(180deg);
+  }
+  
+  .nxt-btn {
     right: 0;
-    border-radius: 3px 0 0 3px;
-    margin: -2%;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-    background-color: #088178;
-}
-
-.prev {
-    background-color: #17181a;
-    background-color: #17181a;
-    margin-left: -101%;
-}
-
-
-    .next {
-        background-color: rgb(15, 15, 15);
-   
-    }
-
-
-/* End of the styling for slide */
+  }
+  
+  .pre-btn img,
+  .nxt-btn img {
+    opacity: 0.2;
+  }
+ 
+  .pre-btn:hover img,
+  .nxt-btn:hover img {
+    opacity: 1;
+  }
+  
+  .collection-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+  
+  .collection {
+    position: relative;
+  }
+  
+  .collection img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .collection p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+    text-transform: capitalize;
+  }
+  
+  .collection:nth-child(3) {
+    grid-column: span 2;
+    margin-bottom: 10px;
+  }
+/* End */
 #banner{
     display: flex;
     flex-direction: column;
