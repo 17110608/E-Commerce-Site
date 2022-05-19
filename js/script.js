@@ -131,12 +131,16 @@ hero.addEventListener("mouseover", () => {
 });
 
 function hoverEffect() {
-    console.log("Hii");
+    //console.log("Working");
     var blink_speed = 1000; // every 1000 == 1 second, adjust to suit
     var t = setInterval(function () {
         var ele = document.getElementById('button1');
         ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden');
+        var ele1 = document.getElementById('off');
+        ele1.style.visibility = (ele1.style.visibility == 'hidden' ? '' : 'hidden');
     }, blink_speed);
+
+    
 }
 
 //For slider
