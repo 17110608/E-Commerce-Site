@@ -174,6 +174,16 @@ function delivery() {
 
 //Cart page Code ends here
 
+
+//Adding product to cart code begins from here
+let prd_add_btn = document.getElementById("prd-add-btn");
+let cart_value = document.getElementById("prd-add").value;
+function add_cart(price,img){
+    alert(1);
+}
+
+//Adding product to cart code ends here
+
 //Database Coding starts from here
 //URLSearchParams is the standard object inside the object we passing query parameters to filter the required data
 const form = new URLSearchParams(window.location.search);
