@@ -241,7 +241,7 @@ function add_cart(price, description, img) {
     //adding that object data into user cart using array push method
     // if(user.cart.length <= 5){
     user.cart.push(product_add);
-    user.cart = user.cart.filter(function(x) { return x !== null });
+    user.cart = user.cart.filter(function(data) { return data !== null });
     // }else {
     //     alert("Only upto 5 products per user allowed to hold in cart")
     // }
@@ -262,7 +262,7 @@ function remove_product(cls, id) {
     //adding that object data into user cart using array push method
     // if(user.cart.length <= 5){
     delete user.cart[id]; 
-    user.cart = user.cart.filter(function(x) { return x !== null });
+    user.cart = user.cart.filter(function(data) { return data !== null });
     // }else {
     //     alert("Only upto 5 products per user allowed to hold in cart")
     // }
