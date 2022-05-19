@@ -605,7 +605,7 @@ p {
 #product11 .pro-container1 {
     display: flex;
     justify-content: center;
-    padding-top: 20px;
+    padding-top: 10px;
     flex-wrap: wrap;
     padding-left: 0px;
 
@@ -616,7 +616,7 @@ p {
         min-width: 500px;
         /* padding:10px 12px; */
         padding-left:0px;
-       margin-top: 30px;
+     
         cursor:pointer;
         /* padding-right: 0px; */
         /* margin:0px !important; */
@@ -630,24 +630,16 @@ p {
     }
     #product11 .pro1 img{
         width:100%;
+        padding-left: 5px;
       
     }
     #product11 .pro1 h5{
         text-align: center;
     }
-    .shopw{
-        padding-left: 200px;
-        padding-bottom: 20px;
-        text-align: center;
-        padding-top: 10px;
-    }
-    
-    .pro1{
+         .pro1{
         margin-left: 0px;
     }
-    #product11{
-        margin-top: 20%;
-    }
+   
 
 
 
@@ -687,7 +679,7 @@ p {
 }
 
 .pro1 {
-    margin-left: 0px;
+    margin-left: 50px;
 }
 
 
@@ -963,6 +955,7 @@ ul #cancel {
         margin: 0px 0px;
        
     }
+    
     .product11{
         margin-top: 30%;
     }
@@ -992,7 +985,7 @@ ul #cancel {
     flex-wrap: wrap;
 }
 
-#saree .sar1 {
+#saree > .sar1 {
     width: 23%;
 
     min-width: 650px;
@@ -1101,25 +1094,43 @@ ul #cancel {
 
 
 
-#ar1 {
-    display: none;
-}
 
-#ar1:target {
-    display: block;
 
-}
-
-#ar2 {
-    display: none;
-}
-
-#ar2:target {
-    display: block;
-
-}
 
 #top-page1 .top{
     width:40%;
     max-width: 320%;
+}
+#tshirt {
+    text-align: center;
+}
+
+#tshirt .t-container11 {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+
+#tshirt  .t-container11 {
+    width: 23%;
+
+    min-width: 650px;
+   
+    padding: 5px 5px;
+    /* border: 1px solid #cce7d0;
+    border-radius: 15px; */
+
+    min-width: 250px;
+
+    padding: 10px 12px;
+    border: 1px solid #cce7d0;
+    border-radius: 50px;
+
+    cursor: pointer;
+    /* box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02); */
+    margin: 5px 10;
+    transition: 0.2s ease;
+    position: relative;
+    /*  Parent element should be relative when you have to use position absolute in its child */
 }
