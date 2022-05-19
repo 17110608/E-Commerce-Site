@@ -175,7 +175,7 @@ function delivery() {
 if (session) {
     let email = JSON.parse(sessionStorage.getItem("user")).email;
     var user = JSON.parse(localStorage.getItem(email));
-    console.log(user);
+    //console.log(user);
     let total = user.cart.length;
     let products_show = document.getElementById("products-show");
     //Run this code if cart is not empty
@@ -187,7 +187,16 @@ if (session) {
             let price = user.cart[i].price;
             let quantity = user.cart[i].quantity;
             let description = user.cart[i].description;
-
+            var options = "";
+            //just to show the selected option
+            for (let j = 1; j < 6; j++) {
+                if (quantity == j) {
+                    options += `<option value="${j}" selected>${j}</option>`;
+                } else {
+                    options += `<option value="${j}">${j}</option>`;
+                }
+            }
+            //Created one function to add the many products based on loop
             content += ` <li class="fx-list" id="prd-item-${i}">
                     <i class="fa-solid fa-xmark prd-cancel" onclick="remove_product('prd-item-${i}','${i}')"></i>
                     <img class="prd-img" src="../img/women/${img}">
@@ -198,11 +207,7 @@ if (session) {
                         ${description} </span>
                     <h5 class="prd-qnty"> Qnty:
                         <select id="prd-qnty1">
-                            <option value="1" selected>1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
+                        ${options}
                         </select>
                     </h5>
                     <h6 class="prd-span block">
