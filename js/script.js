@@ -172,23 +172,23 @@ function delivery() {
 
 }
 
-if(session){
-let email = JSON.parse(sessionStorage.getItem("user")).email;
-var user = JSON.parse(localStorage.getItem(email));
-console.log(user);
-let total = user.cart.length;
-let products_show = document.getElementById("products-show");
-//Run this code if cart is not empty
-if(total>0 && products_show){
-    //creating the loop to show products
-    var content = "";
-   for(let i=0;i<total;i++){
-       let img = user.cart[i].img;
-       let price = user.cart[i].price;
-       let quantity = user.cart[i].quantity;
-       let description = user.cart[i].description;
+if (session) {
+    let email = JSON.parse(sessionStorage.getItem("user")).email;
+    var user = JSON.parse(localStorage.getItem(email));
+    console.log(user);
+    let total = user.cart.length;
+    let products_show = document.getElementById("products-show");
+    //Run this code if cart is not empty
+    if (total > 0 && products_show) {
+        //creating the loop to show products
+        var content = "";
+        for (let i = 0; i < total; i++) {
+            let img = user.cart[i].img;
+            let price = user.cart[i].price;
+            let quantity = user.cart[i].quantity;
+            let description = user.cart[i].description;
 
-        content+= ` <li class="fx-list" id="prd-item-${i}">
+            content += ` <li class="fx-list" id="prd-item-${i}">
                     <i class="fa-solid fa-xmark prd-cancel" onclick="remove_product('prd-item-${i}','${i}')"></i>
                     <img class="prd-img" src="../img/women/${img}">
                     <h4 class="prd-price">
@@ -213,9 +213,9 @@ if(total>0 && products_show){
                 <hr>
        `;
 
-   }
-   products_show.innerHTML = content;
-}
+        }
+        products_show.innerHTML = content;
+    }
 
 }
 
@@ -240,35 +240,43 @@ function add_cart(price, description, img) {
     };
     //adding that object data into user cart using array push method
     // if(user.cart.length <= 5){
+    //adding data to user cart 
     user.cart.push(product_add);
-    user.cart = user.cart.filter(function(data) { return data !== null });
+    //checking the empty objects and removing them here
+    user.cart = user.cart.filter(function (data) {
+        return data !== null
+    });
     // }else {
     //     alert("Only upto 5 products per user allowed to hold in cart")
     // }
     //console.log(user)
     //Saving user cart data
-    localStorage.setItem(email,JSON.stringify(user));
+    localStorage.setItem(email, JSON.stringify(user));
     alert("Product added to cart")
 
 }
 
 function remove_product(cls, id) {
     //getting the number of items value from html add cart page
-     document.getElementById(cls).style = "display:none";
+    document.getElementById(cls).style = "display:none";
     //using session getting user details
     let email = JSON.parse(sessionStorage.getItem("user")).email;
     var user = JSON.parse(localStorage.getItem(email));
 
     //adding that object data into user cart using array push method
     // if(user.cart.length <= 5){
-    delete user.cart[id]; 
-    user.cart = user.cart.filter(function(data) { return data !== null });
+    //deleting the cart product based on user action
+    delete user.cart[id];
+    //checking the empty objects and removing them here
+    user.cart = user.cart.filter(function (data) {
+        return data !== null
+    });
     // }else {
     //     alert("Only upto 5 products per user allowed to hold in cart")
     // }
     //console.log(user)
     //Saving user cart data
-    localStorage.setItem(email,JSON.stringify(user));
+    localStorage.setItem(email, JSON.stringify(user));
     alert("Product removed from cart")
 
 }
