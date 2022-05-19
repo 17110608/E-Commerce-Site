@@ -556,6 +556,10 @@ input[type="submit"], select, button {
     font-size: 15px;
 }
 
+#hero button:hover {
+    transform: scale(1.1);
+}
+
 #feature {
     display: flex;
     align-items: center;
