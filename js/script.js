@@ -274,4 +274,10 @@ if (form.get("submit") == "Register") {
         window.location.href = "login"
     }
 
+<<<<<<< HEAD
 }
+
+  
+=======
+}
+>>>>>>> a10168cc679662fc766665b86b748bab7becee5d
