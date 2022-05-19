@@ -781,7 +781,7 @@ ul #cancel {
      background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #E3E6F3 100%); 
     cursor: pointer;
     z-index: 8;
-    margin-top:-5%;
+    margin-top:-3%;
   }
   
   .pre-btn {
