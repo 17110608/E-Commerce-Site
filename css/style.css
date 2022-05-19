@@ -433,6 +433,7 @@ p {
     font-size: 14px;
     margin-top: 4px;
     margin-left: 160px;
+    position: sticky;
 }
 
 .prd-span {
@@ -828,7 +829,7 @@ ul #cancel {
 }
 
 .fx-height {
-    height: 20vh !important;
+    height: 10vh !important;
 }
 
 
@@ -841,7 +842,7 @@ ul #cancel {
     }
 
     .fx-height {
-        height: 15vh !important;
+        height: 8vh !important;
     }
 
     #feature {
@@ -1054,6 +1055,7 @@ ul #cancel {
         background-color: #E3E6F3;
         margin-top: 50px;
         height: 50vh;
+        /* min-width: 260px; */
         margin-bottom: 20px;
         padding-left: 4px;
         border-radius: 4px;
