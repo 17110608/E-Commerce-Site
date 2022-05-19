@@ -368,7 +368,7 @@ p {
 .del-meth {
     width: 100%;
     margin-left: 1%;
-    height: 5vh;
+    height: 6vh;
     padding: 10px;
     font-weight: bold;
     background-color: #E3E6F3;
@@ -398,7 +398,7 @@ p {
 .prd-ch {
     width: 25%;
     margin-left: 1%;
-    height: 65vh;
+    height: 70vh;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -410,7 +410,7 @@ p {
     list-style: none;
     background-color: #E3E6F3;
     margin-top: 50px;
-    height: 20vh;
+    height: 25vh;
     margin-bottom: 20px;
     ;
     border-radius: 4px;
@@ -482,7 +482,7 @@ p {
 
 .prd-check {
     height: 60px;
-    /* padding: 15px; */
+    padding: 15px;
     color: #fff;
     background-color: #088178;
     border: none;
@@ -828,7 +828,7 @@ ul #cancel {
 }
 
 .fx-height {
-    height: 12vh !important;
+    height: 20vh !important;
 }
 
 
@@ -838,6 +838,10 @@ ul #cancel {
         justify-content: center;
         padding-top: 20px;
         flex-wrap: wrap;
+    }
+
+    .fx-height {
+        height: 15vh !important;
     }
 
     #feature {
@@ -1049,7 +1053,7 @@ ul #cancel {
         list-style: none;
         background-color: #E3E6F3;
         margin-top: 50px;
-        height: 45vh;
+        height: 50vh;
         margin-bottom: 20px;
         padding-left: 4px;
         border-radius: 4px;
