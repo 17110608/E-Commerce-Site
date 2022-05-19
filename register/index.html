@@ -16,7 +16,7 @@
 <body>
     <section id="header">
         <a href="../index.html"><img src="../img/logo.png" class="logo" alt="logo"> </a>
-        <div>
+        <div id="desktop">
             <ul id="navbar" class="navbar">
                 <li id="cancel"><i class="fa-solid fa-solid fa-xmark fa-2x"></i></li>
                 <li><a href="../index.html">Home</a></li>
@@ -36,19 +36,28 @@
         </div>
     </section>
 
-    <div id="hero" class="bg-c tp-100px fm-width"> 
-        <form  class="register-form center" name="register" id="register" method="get" action="../process.html">
+    <div id="hero" class="bg-c tp-100px fm-width">
+        <form class="register-form center" name="register" id="register" method="get" action="../process.html">
             <h6><i class="fa-solid fa-circle-user u-icon"></i></h6>
-            <label for="fname" id="fname-l" class="label">First Name</label>
-            <input type="text" class="fm-input" name="fname"  minlength="4" placeholder="&#128100; Minimum 4 Characters" required>
-            <label for="lname" id="lname-l" class="label">Last Name</label>
-            <input type="text" class="fm-input" name="lname" placeholder="&#128100; Optional">
+            <div class="flex-box">
+                <div class="inline">
+                    <label for="fname" id="fname-l" class="label">First Name</label>
+                    <input type="text" class="fm-input fm-sp" name="fname" minlength="4"
+                        placeholder="&#128100; Minimum 4 Characters" required>
+                </div>
+                <div class="inline ml-10px">
+                    <label for="lname" id="lname-l" class="label">Last Name</label>
+                    <input type="text" class="fm-input fm-sp" name="lname" placeholder="&#128100; Optional"><br>
+                </div>
+            </div>
             <label for="mob" id="mob-l" class="label">Mobile Number</label>
-            <input type="number" class="fm-input" name="mob" placeholder="&#128241; Minimum 10 numbers" required>
+            <input type="number" id="mob" class="fm-input" name="mob" placeholder="&#128241; Minimum 10 numbers"
+                required>
             <label for="email" id="email-l" class="label">Email Address</label>
             <input type="email" class="fm-input" name="email" placeholder="&#128231; Should Contain @ Symbol">
             <label for="pwd" id="pwd-l" class="label">Password</label>
-            <input type="password" class="fm-input" name="pwd" minlength="6" minlength="32" placeholder="&#128273; Set Your Password" required>
+            <input type="password" class="fm-input" name="pwd" minlength="6" minlength="32"
+                placeholder="&#128273; Set Your Password" required>
             <a class="log-in" id="register-in" href="../login">Login Now</a>
             <br><br>
             <input type="submit" class="js-center button" name="submit" value="Register">

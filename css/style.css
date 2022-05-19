@@ -208,6 +208,14 @@ p {
     text-align: center;
 }
 
+.block {
+    display: block !important;
+}
+
+.tp-half {
+    margin-top: 50%;
+}
+
 .register-form {
     margin: auto;
     padding: 10px;
@@ -231,14 +239,24 @@ p {
     display: block;
     margin: auto;
     height: 35px;
-    width: 250px;
+    width: 100%;
     border: none;
-    font-weight: normal;
+    font-weight: bold;
     font-size: 16px;
     color: rgb(8, 129, 120);
     border-radius: 25px;
     padding-left: 14px;
     margin-bottom: 10px;
+}
+
+@media screen and (min-width: 820px){
+    .fm-input {
+        width: 40%;
+    }
+
+    .fm-sp {
+        width: 100%;
+    }
 }
 
 .fm-input::placeholder {
@@ -288,12 +306,111 @@ p {
     color: #090237;
     font-weight: bold;
     font-size: 16px;
+    white-space: nowrap
 }
 
 #hero .log-in {
     /* text-decoration: none; */
     margin-left: 150px;
     font-weight: bold;
+}
+
+.product {
+    background-color: #E3E6F3;
+    display: flex;
+    height: 100%;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.inline {
+    display: inline !important;
+}
+
+.prd-list {
+    width: 73%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    background-color: #fff2e5;
+    border-radius: 4px;
+}
+
+.prd-ch {
+    width: 25%;
+    margin-left: 1%;
+    height: 60vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff2e5;
+    border-radius: 4px;
+}
+
+.fx-list {
+    list-style: none;
+    background-color: #E3E6F3;
+    margin: 10px;
+    border-radius: 4px;
+}
+
+.prd-img {
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    float: left;
+    align-items: center;
+}
+
+.prd-price {
+    margin-left: 160px;
+    margin-top: 4px;
+}
+
+.prd-qnty {
+    font-size: 14px;
+    margin-top: 4px;
+    margin-left: 160px;
+}
+
+.prd-span {
+    margin-left: 160px;
+    margin-top: 4px;
+}
+
+.prd-details {
+    margin-left: 10px;
+    /* text-align: center; */
+}
+
+.prd-cancel {
+    float: right;
+    margin-right: 15px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.prd-head {
+    font-size: 30px;
+    font-weight: bold;
+    float: left;
+}
+
+.fx-col {
+    flex-direction: column;
+}
+
+.total-price {
+    font-size: 28px;
+}
+
+.prd-total, .sb-price, .tx-price, .del-price {
+    float: right;
+}
+
+.prd-check {
+    height: 50px;
 }
 
 @keyframes loading {
@@ -590,10 +707,28 @@ ul #cancel {
     cursor: pointer;
 }
 
+<<<<<<< HEAD
 /* For slide effect */
 /* .mySlides {
     display: none;
 } */
+=======
+.flex-box {
+    display: flex !important;
+    justify-content: center;
+}
+
+.flex-box1 {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ml-10px {
+    margin-left: 10px;
+}
+
+>>>>>>> dbd38efef167a9ab0fd9bf1d154a0200b47dfc88
 
 .Product {
     vertical-align: middle;
@@ -779,6 +914,10 @@ ul #cancel {
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
+    }
+
+    .no-padd {
+        padding-left: 0px !important;
     }
 
 
@@ -1011,15 +1150,52 @@ ul #cancel {
 }
 
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+#mob::-webkit-outer-spin-button,
+#mob::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+} 
+
+
+#prodetails .single-img{
+    width:40%;
+    max-width: 230px;
+   
+    /* margin-right: 50px; */
+    border: 2px solid #cce7d0;
+    border-radius: 25px;
+    /* margin: 20px 20px; */
+   
+  
+   
 }
-
-input[type=number] {
-    -moz-appearance: textfield;
-
+#prodetails{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 0px;
+}
+#prodetails .single-pro-detail{
+    width:50%;
+    padding-top: 30px;
+    margin-left: 30px;
+}
+.single-img{
+    width:60%;
+    min-width: 330px;
+    /* margin-right: 30%; */
+    border-width: 20px;
+    margin-left: 30px;
+    text-align: center;
+}
+#prodetails .single-pro-detail h4{
+    padding:40px 0  20px 0;
+}
+#prodetails .single-pro-detail h2{
+    font-size: 26px;
+}
+#prodetails .single-pro-detail input{
+    width:50px;
+    height:47px;
 }
 
 #ar1 {
