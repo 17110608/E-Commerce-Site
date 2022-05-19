@@ -727,13 +727,19 @@ ul #cancel {
 
 .Product {
     vertical-align: middle;
+    padding: 10px;
+
 }
 
 /* Slideshow container */
 .slideshow-container {
-    max-width: 25%;
     position: relative;
-    margin: auto;
+    display: flex;
+    padding: 10px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around !important;
+    /* margin: auto;  */
 }
 
 /* The dots/bullets/indicators */
@@ -760,7 +766,9 @@ ul #cancel {
 .slideshow-container .des {
     text-align: left;
     padding-top: 10px;
+
     line-height: 25px;
+    
 }
 
 .procart {
@@ -782,10 +790,9 @@ ul #cancel {
 .next {
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 36%;
     width: auto;
     padding: 16px;
-    margin-top: -22px;
     color: white;
     font-weight: bold;
     font-size: 18px;
@@ -797,6 +804,7 @@ ul #cancel {
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
+    margin: -2%;
 }
 
 /* On hover, add a black background color with a little bit see-through */
@@ -806,18 +814,17 @@ ul #cancel {
 }
 
 .prev {
-
-    margin-left: -215px;
-    margin-top: -26%;
-    background-color: #c0c6e2;
-
+    background-color: #17181a;
+    background-color: #17181a;
+    margin-left: -101%;
 }
 
-.next {
-    background-color: #c0c6e2;
-    margin-right: -16%;
-    margin-top: -27%;
-}
+
+    .next {
+        background-color: rgb(15, 15, 15);
+   
+    }
+
 
 /* End of the styling for slide */
 #banner{
