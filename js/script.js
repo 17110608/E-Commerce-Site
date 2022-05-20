@@ -1,3 +1,4 @@
+//Getting all require elements document id's here
 const bar = document.getElementById("bar");
 const nav = document.getElementById("navbar");
 const cancel = document.getElementById("cancel");
@@ -7,7 +8,7 @@ const hero = document.getElementById("hero");
 const login_container = document.getElementById("login-container");
 const blink = document.getElementById("button1");
 
-
+//To animate the home page offer button
 window.onload = hoverEffect;
 
 //Getting the path of page with query parameters
@@ -156,6 +157,7 @@ hero.addEventListener("mouseover", () => {
 });
 
 function hoverEffect() {
+
     //console.log("Working");
     var blink_speed = 1000; // every 1000 == 1 second, adjust to suit
     var t = setInterval(function () {
@@ -187,6 +189,157 @@ productContainers.forEach((item, i) => {
     })
 
 })
+
+    // console.log("Hii");
+    var blink_speed = 1000; // every 1000 == 1 second, adjust to suit
+    var ele_ch = document.getElementById('button1');
+    if (ele_ch) {
+        var t = setInterval(function () {
+            var ele = document.getElementById('button1');
+            ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden');
+        }, blink_speed);
+    }
+}
+
+
+//Cart page Code starts from here
+//getting select option id and running function on option selection
+let dl = document.getElementById("del-meth")
+if (dl) {
+    dl.onchange = delivery;
+}
+
+//This function will be called when user selects delivery method
+function delivery() {
+    let delivery = document.getElementById("del-meth").value;
+    let show = document.getElementById("delivery-pirce");
+    //Show delivery fee if user selects express delivery
+    if (delivery == "exp") {
+        show.style = "display:block";
+    } //else hide the delivery fee 
+    else {
+        show.style = "display:none;"
+    }
+
+}
+
+if (session) {
+    let email = JSON.parse(sessionStorage.getItem("user")).email;
+    var user = JSON.parse(localStorage.getItem(email));
+    //console.log(user);
+    let total = user.cart.length;
+    let products_show = document.getElementById("products-show");
+    //Run this code if cart is not empty
+    if (total > 0 && products_show) {
+        //creating the loop to show products
+        var content = "";
+        for (let i = 0; i < total; i++) {
+            let img = user.cart[i].img;
+            let price = user.cart[i].price;
+            let quantity = user.cart[i].quantity;
+            let description = user.cart[i].description;
+            var options = "";
+            //just to show the selected option
+            for (let j = 1; j < 6; j++) {
+                if (quantity == j) {
+                    options += `<option value="${j}" selected>${j}</option>`;
+                } else {
+                    options += `<option value="${j}">${j}</option>`;
+                }
+            }
+            //Created one function to add the many products based on loop
+            content += ` <li class="fx-list" id="prd-item-${i}">
+                    <i class="fa-solid fa-xmark prd-cancel" onclick="remove_product('prd-item-${i}','${i}')"></i>
+                    <img class="prd-img" src="../img/women/${img}">
+                    <h4 class="prd-price">
+                        Price: ${price}
+                    </h4>
+                    <span class="prd-details">
+                        ${description} </span>
+                    <h5 class="prd-qnty"> Qnty:
+                        <select id="prd-qnty1">
+                        ${options}
+                        </select>
+                    </h5>
+                    <h6 class="prd-span block">
+                        Other element
+                    </h6>
+
+                </li>
+                <hr>
+       `;
+
+        }
+        products_show.innerHTML = content;
+    }
+
+}
+
+//Cart page Code ends here
+
+
+//Product adding to cart starts from here
+
+
+function add_cart(price, description, img) {
+    //getting the number of items value from html add cart page
+    var prd_price = document.getElementById("prd-add").value;
+    //using session getting user details
+    let email = JSON.parse(sessionStorage.getItem("user")).email;
+    var user = JSON.parse(localStorage.getItem(email));
+    //adding product info to object
+    var product_add = {
+        "price": price,
+        "img": img,
+        "description": description,
+        "quantity": prd_price
+    };
+    //adding that object data into user cart using array push method
+    // if(user.cart.length <= 5){
+    //adding data to user cart 
+    user.cart.push(product_add);
+    //checking the empty objects and removing them here
+    user.cart = user.cart.filter(function (data) {
+        return data !== null
+    });
+    // }else {
+    //     alert("Only upto 5 products per user allowed to hold in cart")
+    // }
+    //console.log(user)
+    //Saving user cart data
+    localStorage.setItem(email, JSON.stringify(user));
+    alert("Product added to cart")
+
+}
+
+function remove_product(cls, id) {
+    //getting the number of items value from html add cart page
+    document.getElementById(cls).style = "display:none";
+    //using session getting user details
+    let email = JSON.parse(sessionStorage.getItem("user")).email;
+    var user = JSON.parse(localStorage.getItem(email));
+
+    //adding that object data into user cart using array push method
+    // if(user.cart.length <= 5){
+    //deleting the cart product based on user action
+    delete user.cart[id];
+    //checking the empty objects and removing them here
+    user.cart = user.cart.filter(function (data) {
+        return data !== null
+    });
+    // }else {
+    //     alert("Only upto 5 products per user allowed to hold in cart")
+    // }
+    //console.log(user)
+    //Saving user cart data
+    localStorage.setItem(email, JSON.stringify(user));
+    alert("Product removed from cart")
+
+}
+
+//product adding ends here
+
+
 //Database Coding starts from here
 //URLSearchParams is the standard object inside the object we passing query parameters to filter the required data
 const form = new URLSearchParams(window.location.search);
@@ -194,11 +347,12 @@ const form = new URLSearchParams(window.location.search);
 //Login process
 if (form.get("submit") == "Login") {
     //Getting the field values using get method which is the method of that URLSearchParams
-    let mob = form.get("mob");
+    let email = form.get("email");
     let pwd = form.get("pwd");
 
     //Checking with the local database to verify the user and here key value type database so we passing key as the number
-    let check = localStorage.getItem(mob);
+    let check = localStorage.getItem(email);
+    localStorage.removeItem(email); //to remove user 
     //if number present proceed
     if (check) {
         let userData = JSON.parse(check);
@@ -208,6 +362,7 @@ if (form.get("submit") == "Login") {
         let mob = userData.mob;
         let pwd1 = userData.pwd;
         let cart = userData.cart;
+        let purchase = userData.purchase;
         let address = userData.address;
 
         //Saving session
@@ -217,14 +372,16 @@ if (form.get("submit") == "Login") {
             "mob": mob,
             "email": email,
             "cart": cart,
+            "purchase": purchase,
             "address": address
         };
 
-        //Check the stored user password with present submit password both matching create session else through alert
+        //Check the stored user password with present submit password, if both matching then create session else through alert
         if (pwd == pwd1) {
             window.location.href = "products"
             //Using session Here 
             sessionStorage.setItem("user", JSON.stringify(session_user));
+
         } else {
             //Through invalid password alert
             alert("Invalid User Password");
@@ -255,7 +412,8 @@ if (form.get("submit") == "Register") {
         "mob": mob,
         "email": email,
         "pwd": pwd,
-        "cart": "",
+        "cart": [],
+        "purchase": [],
         "address": ""
     };
     //This one for session purpose, we can use previous one also but there password also contains that will be not good practice
@@ -264,16 +422,17 @@ if (form.get("submit") == "Register") {
         "lname": lname,
         "mob": mob,
         "email": email,
-        "cart": "",
+        "cart": [],
+        "purchase": [],
         "address": ""
     };
 
     //Before that make user based on the user number no account is present
-    let pre_check = localStorage.getItem(mob);
+    let pre_check = localStorage.getItem(email);
     //If no account is there then create new one
     if (!pre_check) {
         //Saving user data
-        localStorage.setItem(mob, JSON.stringify(userData));
+        localStorage.setItem(email, JSON.stringify(userData));
         //Creating the session data to get data later on
         sessionStorage.setItem("user", JSON.stringify(session_user));
         //Also redirect user to products page
