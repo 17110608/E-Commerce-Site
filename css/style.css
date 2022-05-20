@@ -994,7 +994,12 @@ ul #cancel {
         justify-content: center;
         flex-wrap: wrap;
     }
-
+    .fepro{
+        margin:auto;
+    }
+    .fepro p{
+        padding-left: 100px;
+    }
     #hero button {
         background-image: url("../img/button.png");
         background-color: transparent;
@@ -1024,6 +1029,7 @@ ul #cancel {
     h2 {
         font-size: 18px;
         line-height: 54px;
+        text-align: center;
         color: rgb(34, 34, 34);
     }
 
@@ -1035,19 +1041,65 @@ ul #cancel {
     #hero {
         height: 100vh;
         width: 100%;
-        background-position: top 25% right 0%;
+        background-position: top 25% right 25%;
         background-size: cover;
-        padding-left: 8vw;
+        padding-left: 4vw;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
     }
+    #hero p {
+        font-size: 9px;
+        color: #465b52;
+        margin: -12px 0 5px 0;
+    }
 
+    #hero h1 {
+        font-size: 22px;
+        line-height: 64px;
+        color: #088178;
+        margin: -34px 0px -3px 0px;
+    }
+
+    #hero h2 {
+        font-size: 18px;
+        line-height: 54px;
+        color: rgb(34, 34, 34);
+    }
+
+    #hero h4 {
+        font-size: 10px;
+        color: #088178;
+        margin: 0px 0 -25px 0;
+    }
+    .product-container {
+        padding: 12px 13vw;
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        margin-top: 5%;
+    }
+    .pre-btn, .nxt-btn {
+        border: none;
+        width: 10vw;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #E3E6F3 100%);
+        cursor: pointer;
+        z-index: 8;
+        margin-top: -17%;
+    }
     .no-padd {
         padding-left: 0px !important;
     }
-
+    .product{
+        text-align: center;
+    }
 
     .hero-home {
         height: 50vh !important;
@@ -1084,30 +1136,7 @@ ul #cancel {
         margin-top: -19%;
     }
 
-    #hero p {
-        font-size: 10px;
-        color: #465b52;
-        margin: -12px 0 5px 0;
-    }
-
-    #hero h1 {
-        font-size: 22px;
-        line-height: 64px;
-        color: #088178;
-        margin: -34px 0px -3px 0px;
-    }
-
-    #hero h2 {
-        font-size: 18px;
-        line-height: 54px;
-        color: rgb(34, 34, 34);
-    }
-
-    #hero h4 {
-        font-size: 10px;
-        color: #088178;
-        margin: 0px 0 -25px 0;
-    }
+   
 
 
     .navbar.active {
