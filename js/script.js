@@ -19,7 +19,6 @@ let except = find.filter(String)[0];
 //General Session to redirect already logged users
 let session = JSON.parse(sessionStorage.getItem("user"));
 if (session && (except == "login" || except == "register")) {
-
     window.location = "../products";
 }
 
@@ -89,25 +88,22 @@ if (bar) {
 
 //If login1 user id or login2 user id is available in page then run the following code
 if (login1 || login2) {
+
+
     //Run if login1 id element is available in page
     if (login1) {
         //Adding event mousehover to show the login-container after hover
+
         login1.addEventListener("mouseover", function () {
             show_login();
             console.log("Login1 event registered");
         });
     }
-    //Run if login2 id element is available in page
-    //Works only for mobile width or mode
+
     if (login2) {
-        //Adding event mousehover to show the login-container after hover
         login2.addEventListener("mouseover", function () {
-            //Before that make sure navigation bar is not showing, otherwise elements collapse will happens
-            //Getting navigation bar element style properties, initially i given style  right = -300px;
-            //if it is not -300px then it is active, so created one function to hide that navigation bar and calling here
             var style = getComputedStyle(nav).right;
             if (style != "-300px") {
-                //Calling the function to hide navigation bar
                 noMenu();
                 //    console.log(style);
             }
@@ -117,8 +113,30 @@ if (login1 || login2) {
     }
 }
 
+
+//Run if login2 id element is available in page
+//Works only for mobile width or mode
+if (login2) {
+    //Adding event mousehover to show the login-container after hover
+    login2.addEventListener("mouseover", function () {
+        //Before that make sure navigation bar is not showing, otherwise elements collapse will happens
+        //Getting navigation bar element style properties, initially i given style  right = -300px;
+        //if it is not -300px then it is active, so created one function to hide that navigation bar and calling here
+        var style = getComputedStyle(nav).right;
+        if (style != "-300px") {
+            //Calling the function to hide navigation bar
+            noMenu();
+            //    console.log(style);
+        }
+        show_login();
+        // console.log("Login2 event registered");
+    });
+}
+
+
 //Created one event to hide the both navigation bar and login-containers if they are active
 //Created one div with id hero, if user hovers mouse into that div, and any one of element is active or showing, we hiding that element
+
 hero.addEventListener("mouseover", () => {
     console.log("Hero Div clicked");
     if (login1) {
@@ -139,6 +157,39 @@ hero.addEventListener("mouseover", () => {
 });
 
 function hoverEffect() {
+
+    //console.log("Working");
+    var blink_speed = 1000; // every 1000 == 1 second, adjust to suit
+    var t = setInterval(function () {
+        var ele = document.getElementById('button1');
+        ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden');
+        var ele1 = document.getElementById('off');
+        ele1.style.visibility = (ele1.style.visibility == 'hidden' ? '' : 'hidden');
+    }, blink_speed);
+
+
+}
+
+//For slider
+const productContainers = [...document.querySelectorAll('.product-container')];
+const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
+const preBtn = [...document.querySelectorAll('.pre-btn')];
+
+productContainers.forEach((item, i) => {
+    let containerDimensions = item.getBoundingClientRect();
+   // alert(JSON.stringify(containerDimensions));
+    let containerWidth = containerDimensions.width;
+
+    nxtBtn[i].addEventListener('click', () => {
+        item.scrollLeft += containerWidth;
+    })
+
+    preBtn[i].addEventListener('click', () => {
+        item.scrollLeft -= containerWidth;
+    })
+
+})
+
     // console.log("Hii");
     var blink_speed = 1000; // every 1000 == 1 second, adjust to suit
     var ele_ch = document.getElementById('button1');
@@ -288,6 +339,7 @@ function remove_product(cls, id) {
 
 //product adding ends here
 
+
 //Database Coding starts from here
 //URLSearchParams is the standard object inside the object we passing query parameters to filter the required data
 const form = new URLSearchParams(window.location.search);
@@ -346,6 +398,7 @@ if (form.get("submit") == "Login") {
 
 //Register Process
 if (form.get("submit") == "Register") {
+    alert("hi")
     //Getting the user input fields
     let fname = form.get("fname");
     let lname = form.get("lname");
@@ -373,6 +426,7 @@ if (form.get("submit") == "Register") {
         "purchase": [],
         "address": ""
     };
+
     //Before that make user based on the user number no account is present
     let pre_check = localStorage.getItem(email);
     //If no account is there then create new one
