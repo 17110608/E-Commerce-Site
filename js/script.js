@@ -199,7 +199,6 @@ productContainers.forEach((item, i) => {
             ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden');
         }, blink_speed);
     }
-}
 
 
 //Cart page Code starts from here
