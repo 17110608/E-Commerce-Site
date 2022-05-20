@@ -177,7 +177,7 @@ const preBtn = [...document.querySelectorAll('.pre-btn')];
 
 productContainers.forEach((item, i) => {
     let containerDimensions = item.getBoundingClientRect();
-   // alert(JSON.stringify(containerDimensions));
+    // alert(JSON.stringify(containerDimensions));
     let containerWidth = containerDimensions.width;
 
     nxtBtn[i].addEventListener('click', () => {
@@ -189,17 +189,6 @@ productContainers.forEach((item, i) => {
     })
 
 })
-
-    // console.log("Hii");
-    var blink_speed = 1000; // every 1000 == 1 second, adjust to suit
-    var ele_ch = document.getElementById('button1');
-    if (ele_ch) {
-        var t = setInterval(function () {
-            var ele = document.getElementById('button1');
-            ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden');
-        }, blink_speed);
-    }
-}
 
 
 //Cart page Code starts from here
