@@ -210,6 +210,7 @@ p {
 
 .block {
     display: block !important;
+    text-align: left;
 }
 
 .tp-half {
@@ -249,13 +250,15 @@ p {
     margin-bottom: 10px;
 }
 
-@media screen and (min-width: 820px){
+/* For smaller screens we reducing the width */
+@media screen and (min-width: 820px) {
     .fm-input {
         width: 40%;
     }
 
     .fm-sp {
-        width: 100%;
+        width: 300px;
+
     }
 }
 
@@ -306,7 +309,31 @@ p {
     color: #090237;
     font-weight: bold;
     font-size: 16px;
-    white-space: nowrap
+    white-space: nowrap;
+}
+
+.required {
+    color: red;
+}
+
+.label-mr {
+    margin-left: 250px;
+}
+
+.accept {
+    font-size: 20px;
+    color: #088178;
+}
+
+.fx-pay {
+    margin-top: 10px !important;
+}
+
+@media screen and (max-width: 820px) {
+    .label-mr {
+        margin-left: 0px;
+    }
+
 }
 
 #hero .log-in {
@@ -325,6 +352,7 @@ p {
 
 .inline {
     display: inline !important;
+    text-align: left;
 }
 
 .prd-list {
@@ -337,10 +365,40 @@ p {
     border-radius: 4px;
 }
 
+.del-meth {
+    width: 100%;
+    margin-left: 1%;
+    height: 6vh;
+    padding: 10px;
+    font-weight: bold;
+    background-color: #E3E6F3;
+}
+
+#delivery-pirce {
+    display: none;
+}
+
+.payment {
+    width: 50px;
+    height: 50px;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+@media screen and (max-width: 1000px) {
+    .payment {
+        width: 25px;
+        height: 25px;
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+
+}
+
 .prd-ch {
     width: 25%;
     margin-left: 1%;
-    height: 60vh;
+    height: 70vh;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -351,7 +409,10 @@ p {
 .fx-list {
     list-style: none;
     background-color: #E3E6F3;
-    margin: 10px;
+    margin-top: 50px;
+    height: 25vh;
+    margin-bottom: 20px;
+    ;
     border-radius: 4px;
 }
 
@@ -372,6 +433,7 @@ p {
     font-size: 14px;
     margin-top: 4px;
     margin-left: 160px;
+    position: sticky;
 }
 
 .prd-span {
@@ -381,7 +443,7 @@ p {
 
 .prd-details {
     margin-left: 10px;
-    /* text-align: center; */
+    text-align: center;
 }
 
 .prd-cancel {
@@ -395,23 +457,54 @@ p {
     font-size: 30px;
     font-weight: bold;
     float: left;
+    top: 0px;
 }
 
 .fx-col {
     flex-direction: column;
 }
 
+.fx-display {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 .total-price {
     font-size: 28px;
 }
 
-.prd-total, .sb-price, .tx-price, .del-price {
+.prd-total,
+.sb-price,
+.tx-price,
+.del-price {
     float: right;
 }
 
 .prd-check {
-    height: 50px;
+    height: 60px;
+    padding: 15px;
+    color: #fff;
+    background-color: #088178;
+    border: none;
+    border-radius: 10px;
 }
+
+input[type="submit"], select, button {
+    cursor: pointer;
+}
+
+/* Checkout page CSS starts here */
+
+.checkout {
+    width: 80%;
+    height: 65vh;
+    background-color: rgb(247, 241, 241);
+    margin: auto;
+    border-radius: 5px;
+}
+
+/* Checkout page CSS ends here */
 
 @keyframes loading {
 
@@ -461,6 +554,10 @@ p {
     cursor: pointer;
     font-weight: 700;
     font-size: 15px;
+}
+
+#hero button:hover {
+    transform: scale(1.1);
 }
 
 #feature {
@@ -651,6 +748,7 @@ p {
 }
 
 
+
 footer {
     display: flex;
     flex-wrap: wrap;
@@ -709,19 +807,34 @@ ul #cancel {
 
 .flex-box {
     display: flex !important;
-    justify-content: center;
+    justify-content: space-around;
+    /* margin-left: 20%;
+    margin-right: 10%; */
+    width: 60%;
+    margin: auto;
 }
 
 .flex-box1 {
     display: flex !important;
     flex-direction: column;
     justify-content: center;
+    width: 70%;
+    margin: auto;
+}
+
+.mob,
+.email,
+.pass {
+    margin-left: 25px;
 }
 
 .ml-10px {
     margin-left: 10px;
 }
 
+.fx-height {
+    height: 10vh !important;
+}
 
 
 @media screen and (max-width: 820px) {
@@ -730,6 +843,10 @@ ul #cancel {
         justify-content: center;
         padding-top: 20px;
         flex-wrap: wrap;
+    }
+
+    .fx-height {
+        height: 8vh !important;
     }
 
     #feature {
@@ -826,11 +943,12 @@ ul #cancel {
         margin-bottom: 30px;
         margin-top: -19%;
     }
+
     #hero p {
-		font-size: 10px;
-		color: #465b52;
-		margin: -12px 0 5px 0;
-	}
+        font-size: 10px;
+        color: #465b52;
+        margin: -12px 0 5px 0;
+    }
 
     #hero h1 {
         font-size: 22px;
@@ -839,13 +957,13 @@ ul #cancel {
         margin: -34px 0px -3px 0px;
     }
 
-    #hero  h2 {
+    #hero h2 {
         font-size: 18px;
         line-height: 54px;
         color: rgb(34, 34, 34);
     }
 
-    #hero  h4 {
+    #hero h4 {
         font-size: 10px;
         color: #088178;
         margin: 0px 0 -25px 0;
@@ -874,6 +992,10 @@ ul #cancel {
 
     .center {
         text-align: center;
+    }
+
+    .left {
+        text-align: left !important;
     }
 
     #mobile {
@@ -914,6 +1036,64 @@ ul #cancel {
     .navbar #login1 {
         display: none;
     }
+
+    .prd-head {
+        font-size: 20px !important;
+        font-weight: bold;
+        float: left;
+        color: black !important;
+        top: 0px;
+    }
+
+    .prd-price {
+        margin-left: 16px !important;
+        margin-top: 6px !important;
+        margin-bottom: 1px !important;
+        font-size: 12px !important;
+        color: black !important;
+        clear: both;
+    }
+
+    .fx-list {
+        list-style: none;
+        background-color: #E3E6F3;
+        margin-top: 50px;
+        height: 50vh;
+        /* min-width: 260px; */
+        margin-bottom: 20px;
+        padding-left: 4px;
+        border-radius: 4px;
+    }
+
+    .prd-list {
+        width: 60%;
+        padding: 10px;
+    }
+
+    .prd-ch {
+        width: 35%;
+        margin-left: 1%;
+        height: 60vh;
+        padding: 10px;
+    }
+
+    .prd-check {
+        height: 40px;
+        padding: 15px;
+    }
+
+    .del-meth {
+        width: 100%;
+        margin-left: 1%;
+        height:40px;
+    }
+    
+    .sb-title {
+        padding-bottom: 30px !important;
+        font-size: 14px !important;
+        color: #222;
+    }
+
 
 
 }
@@ -1018,48 +1198,54 @@ ul #cancel {
 #mob::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
-} 
+}
 
 
-#prodetails .single-img{
-    width:40%;
+#prodetails .single-img {
+    width: 40%;
     max-width: 230px;
-   
+
     /* margin-right: 50px; */
     border: 2px solid #cce7d0;
     border-radius: 25px;
     /* margin: 20px 20px; */
-   
-  
-   
+
+
+
 }
-#prodetails{
+
+#prodetails {
     display: flex;
     margin-top: 20px;
     margin-left: 0px;
 }
-#prodetails .single-pro-detail{
-    width:50%;
+
+#prodetails .single-pro-detail {
+    width: 50%;
     padding-top: 30px;
     margin-left: 30px;
 }
-.single-img{
-    width:60%;
+
+.single-img {
+    width: 60%;
     min-width: 330px;
     /* margin-right: 30%; */
     border-width: 20px;
     margin-left: 30px;
     text-align: center;
 }
-#prodetails .single-pro-detail h4{
-    padding:40px 0  20px 0;
+
+#prodetails .single-pro-detail h4 {
+    padding: 40px 0 20px 0;
 }
-#prodetails .single-pro-detail h2{
+
+#prodetails .single-pro-detail h2 {
     font-size: 26px;
 }
-#prodetails .single-pro-detail input{
-    width:50px;
-    height:47px;
+
+#prodetails .single-pro-detail input {
+    width: 50px;
+    height: 47px;
 }
 
 #ar1 {
