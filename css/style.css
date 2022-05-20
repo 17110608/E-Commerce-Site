@@ -750,9 +750,9 @@ ul #cancel {
     margin-top:5%;
   }
   
-  .product-container::-webkit-scrollbar {
-    display: none;
-  }
+    .product-container::-webkit-scrollbar {
+        display: none;
+    }
   /* Hides the scroll bar */
   .product-card {
     flex: 0 0 auto;

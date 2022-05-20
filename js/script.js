@@ -175,6 +175,7 @@ const preBtn = [...document.querySelectorAll('.pre-btn')];
 
 productContainers.forEach((item, i) => {
     let containerDimensions = item.getBoundingClientRect();
+   // alert(JSON.stringify(containerDimensions));
     let containerWidth = containerDimensions.width;
 
     nxtBtn[i].addEventListener('click', () => {
@@ -184,6 +185,7 @@ productContainers.forEach((item, i) => {
     preBtn[i].addEventListener('click', () => {
         item.scrollLeft -= containerWidth;
     })
+
 })
 //Database Coding starts from here
 //URLSearchParams is the standard object inside the object we passing query parameters to filter the required data
@@ -239,6 +241,7 @@ if (form.get("submit") == "Login") {
 
 //Register Process
 if (form.get("submit") == "Register") {
+    alert("hi")
     //Getting the user input fields
     let fname = form.get("fname");
     let lname = form.get("lname");
