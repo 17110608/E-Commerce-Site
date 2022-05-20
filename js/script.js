@@ -192,8 +192,6 @@ productContainers.forEach((item, i) => {
 
 
 
-
-
 //Cart page Code starts from here
 //getting select option id and running function on option selection
 let dl = document.getElementById("del-meth")
@@ -344,7 +342,7 @@ if (form.get("submit") == "Login") {
 
     //Checking with the local database to verify the user and here key value type database so we passing key as the number
     let check = localStorage.getItem(email);
-    localStorage.removeItem(email); //to remove user 
+    //localStorage.removeItem(email); //to remove user 
     //if number present proceed
     if (check) {
         let userData = JSON.parse(check);
