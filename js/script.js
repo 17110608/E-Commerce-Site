@@ -116,15 +116,15 @@ if (login1 || login2) {
 function hoverEffect() {
     //console.log("Working");
     var blink_speed = 1000; // every 1000 == 1 second, adjust to suit
-    var t = setInterval(function () {
-        var ele = document.getElementById('button1');
-        ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden');
-        var ele1 = document.getElementById('off');
-        ele1.style.visibility = (ele1.style.visibility == 'hidden' ? '' : 'hidden');
-    }, blink_speed);
-
-
-} 
+    if (document.getElementById('button1')) {
+        var t = setInterval(function () {
+            var ele = document.getElementById('button1');
+            ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden');
+            var ele1 = document.getElementById('off');
+            ele1.style.visibility = (ele1.style.visibility == 'hidden' ? '' : 'hidden');
+        }, blink_speed);
+    }
+}
 
 
 //Run if login2 id element is available in page
@@ -225,7 +225,7 @@ if (session) {
         var content = "";
         for (let i = 0; i < total; i++) {
             let img = user.cart[i].img;
-            let price = user.cart[i].price;
+            var price = user.cart[i].price;
             let quantity = user.cart[i].quantity;
             let description = user.cart[i].description;
             var options = "";
@@ -252,7 +252,7 @@ if (session) {
                         </select>
                     </h5>
                     <h6 class="prd-span block">
-                        Other element
+                        Limited Offer 
                     </h6>
 
                 </li>
@@ -388,7 +388,6 @@ if (form.get("submit") == "Login") {
 
 //Register Process
 if (form.get("submit") == "Register") {
-    alert("hi")
     //Getting the user input fields
     let fname = form.get("fname");
     let lname = form.get("lname");

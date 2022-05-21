@@ -361,7 +361,7 @@ p {
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
-    background-color: #fff2e5;
+    background-color: #e8fcf8;
     border-radius: 4px;
 }
 
@@ -398,11 +398,11 @@ p {
 .prd-ch {
     width: 25%;
     margin-left: 1%;
-    height: 70vh;
+    height: 75vh;
     padding: 10px;
     display: flex;
     flex-direction: column;
-    background-color: #fff2e5;
+    background-color: #e8fcf8;
     border-radius: 4px;
 }
 
@@ -418,7 +418,7 @@ p {
 
 .prd-img {
     width: 150px;
-    height: 150px;
+    height: 185px;
     padding: 10px;
     float: left;
     align-items: center;
@@ -426,12 +426,12 @@ p {
 
 .prd-price {
     margin-left: 160px;
-    margin-top: 4px;
+    padding-top: 10px;
 }
 
 .prd-qnty {
     font-size: 14px;
-    margin-top: 4px;
+    margin-top: 50px;
     margin-left: 160px;
     position: sticky;
 }
@@ -834,7 +834,7 @@ ul #cancel {
 }
 
 .fx-height {
-    height: 10vh !important;
+    height: 12vh !important;
 }
 
 
@@ -852,7 +852,7 @@ ul #cancel {
 .product {
     position: relative;
     overflow: hidden;
-    padding: 20px;
+    padding: 5px;
   }
   
   .product-container {
@@ -985,7 +985,7 @@ ul #cancel {
     }
 
     .fx-height {
-        height: 8vh !important;
+        height: 12vh !important;
     }
 
     #feature {
@@ -1007,6 +1007,19 @@ ul #cancel {
         font-size: 12px;
         margin-left: -3%;
         background-size: contain;
+    }
+
+    .prd-qnty {
+        font-size: 14px;
+        margin-top: 10px;
+        margin-left: 10px;
+        position: sticky;
+    }
+
+
+
+    .prd-span {
+        margin-left: 10px;
     }
 
     p {
@@ -1195,9 +1208,9 @@ ul #cancel {
 
     .prd-price {
         margin-left: 16px !important;
-        margin-top: 6px !important;
+        padding-top: 8px !important;
         margin-bottom: 1px !important;
-        font-size: 12px !important;
+        font-size: 18px !important;
         color: black !important;
         clear: both;
     }
@@ -1215,13 +1228,14 @@ ul #cancel {
 
     .prd-list {
         width: 60%;
+        height: 85vh;
         padding: 10px;
     }
 
     .prd-ch {
-        width: 35%;
+        width: 45%;
         margin-left: 1%;
-        height: 60vh;
+        height: 55vh;
         padding: 10px;
     }
 
