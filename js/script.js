@@ -434,3 +434,4 @@ if (form.get("submit") == "Register") {
         window.location.href = "login"
     }
 }
+
