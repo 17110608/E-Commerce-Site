@@ -116,15 +116,15 @@ if (login1 || login2) {
 function hoverEffect() {
     //console.log("Working");
     var blink_speed = 1000; // every 1000 == 1 second, adjust to suit
-    var t = setInterval(function () {
-        var ele = document.getElementById('button1');
-        ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden');
-        var ele1 = document.getElementById('off');
-        ele1.style.visibility = (ele1.style.visibility == 'hidden' ? '' : 'hidden');
-    }, blink_speed);
-
-
-} 
+    if (document.getElementById('button1')) {
+        var t = setInterval(function () {
+            var ele = document.getElementById('button1');
+            ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden');
+            var ele1 = document.getElementById('off');
+            ele1.style.visibility = (ele1.style.visibility == 'hidden' ? '' : 'hidden');
+        }, blink_speed);
+    }
+}
 
 
 //Run if login2 id element is available in page
@@ -225,7 +225,7 @@ if (session) {
         var content = "";
         for (let i = 0; i < total; i++) {
             let img = user.cart[i].img;
-            let price = user.cart[i].price;
+            var price = user.cart[i].price;
             let quantity = user.cart[i].quantity;
             let description = user.cart[i].description;
             var options = "";
@@ -252,7 +252,7 @@ if (session) {
                         </select>
                     </h5>
                     <h6 class="prd-span block">
-                        Other element
+                        Limited Offer 
                     </h6>
 
                 </li>
@@ -346,6 +346,7 @@ if (form.get("submit") == "Login") {
     //if number present proceed
     if (check) {
         let userData = JSON.parse(check);
+        //getting query data 
         let fname = userData.fname;
         let lname = userData.lname;
         let email = userData.email;
@@ -433,4 +434,3 @@ if (form.get("submit") == "Register") {
         window.location.href = "login"
     }
 }
-
