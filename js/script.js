@@ -388,7 +388,6 @@ if (form.get("submit") == "Login") {
 
 //Register Process
 if (form.get("submit") == "Register") {
-    alert("hi")
     //Getting the user input fields
     let fname = form.get("fname");
     let lname = form.get("lname");
@@ -433,5 +432,7 @@ if (form.get("submit") == "Register") {
         //Redirect him to login page, so he can login from login page
         window.location.href = "login"
     }
+}
 
+  }
 }
