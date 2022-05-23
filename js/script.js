@@ -432,5 +432,4 @@ if (form.get("submit") == "Register") {
         //Redirect him to login page, so he can login from login page
         window.location.href = "login"
     }
-
 }
