@@ -346,6 +346,7 @@ if (form.get("submit") == "Login") {
     //if number present proceed
     if (check) {
         let userData = JSON.parse(check);
+        //getting query data 
         let fname = userData.fname;
         let lname = userData.lname;
         let email = userData.email;
