@@ -433,6 +433,7 @@ p {
     font-size: 14px;
     margin-top: 4px;
     margin-left: 160px;
+    position: sticky;
 }
 
 .prd-span {
@@ -556,6 +557,10 @@ button {
     font-weight: 700;
     font-size: 15px;
 }
+
+ /* #hero button:hover {
+    transform: scale(1.1);
+}  */
 
 #feature {
     display: flex;
@@ -882,6 +887,7 @@ ul #cancel {
     cursor: pointer;
 }
 
+
 .flex-box {
     display: flex !important;
     justify-content: space-around;
@@ -910,9 +916,147 @@ ul #cancel {
 }
 
 .fx-height {
-    height: 20vh !important;
+    height: 10vh !important;
 }
 
+
+.Product {
+    vertical-align: middle;
+    padding: 10px;
+
+}
+
+
+.fepro{
+    margin-left: 38%;
+}
+/*  SLIDES PRODUCTS */
+.product {
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+  }
+  
+  .product-container {
+    padding: 0 10vw;
+    display: flex;
+    overflow-x: auto;
+   scroll-behavior: smooth;
+    margin-top:5%;
+  }
+  
+    .product-container::-webkit-scrollbar {
+        display: none;
+    }
+  /* Hides the scroll bar */
+  .product-card {
+    flex: 0 0 auto;
+    width: 250px;
+    height: 400px;
+    margin-right: 40px;
+  }
+
+  .product-card:hover .card-btn {
+    opacity: 1;
+  }
+  
+ 
+  
+  
+  .pre-btn,
+  .nxt-btn {
+    border: none;
+    width: 10vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #E3E6F3 100%); 
+    cursor: pointer;
+    z-index: 8;
+    margin-top:-3%;
+  }
+  
+  .pre-btn {
+    left: 0;
+    transform: rotate(180deg);
+  }
+  
+  .nxt-btn {
+    right: 0;
+  }
+  
+  .pre-btn img,
+  .nxt-btn img {
+    opacity: 0.2;
+  }
+ 
+  .pre-btn:hover img,
+  .nxt-btn:hover img {
+    opacity: 1;
+  }
+  
+  .collection-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+  
+  .collection {
+    position: relative;
+  }
+  
+  .collection img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .collection p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+    text-transform: capitalize;
+  }
+  
+  .collection:nth-child(3) {
+    grid-column: span 2;
+    margin-bottom: 10px;
+  }
+/* End */
+#banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(../img/banner/b2.jpg);
+    width: 100%;
+    height:40vh;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 5px !important;
+}
+#banner h4{
+    color: white;
+    font-size: 16px;
+}
+#banner h2{
+    color: white;
+    font-size: 30px;
+    padding: 10px 0;
+
+}
+#banner h2 span{
+    color: red;
+}
 
 @media screen and (max-width: 820px) {
     #product1 .pro-container {
@@ -923,7 +1067,7 @@ ul #cancel {
     }
 
     .fx-height {
-        height: 15vh !important;
+        height: 8vh !important;
     }
 
     #feature {
@@ -932,18 +1076,24 @@ ul #cancel {
         justify-content: center;
         flex-wrap: wrap;
     }
-
+    .fepro{
+        margin:auto;
+    }
+    .fepro p{
+        padding-left: 100px;
+    }
     #hero button {
         background-image: url("../img/button.png");
         background-color: transparent;
         color: #088178;
         border: 0;
-        padding: 14px 35px 13px 62px;
+        padding: 9px 37px 12px 58px;
         background-repeat: no-repeat;
         cursor: pointer;
         font-weight: 500;
         font-size: 12px;
         margin-left: -3%;
+        background-size: contain;
     }
 
     p {
@@ -961,6 +1111,7 @@ ul #cancel {
     h2 {
         font-size: 18px;
         line-height: 54px;
+        text-align: center;
         color: rgb(34, 34, 34);
     }
 
@@ -972,19 +1123,65 @@ ul #cancel {
     #hero {
         height: 100vh;
         width: 100%;
-        background-position: top 25% right 0%;
+        background-position: top 25% right 25%;
         background-size: cover;
-        padding-left: 8vw;
+        padding-left: 4vw;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
     }
+    #hero p {
+        font-size: 9px;
+        color: #465b52;
+        margin: -12px 0 5px 0;
+    }
 
+    #hero h1 {
+        font-size: 22px;
+        line-height: 64px;
+        color: #088178;
+        margin: -34px 0px -3px 0px;
+    }
+
+    #hero h2 {
+        font-size: 18px;
+        line-height: 54px;
+        color: rgb(34, 34, 34);
+    }
+
+    #hero h4 {
+        font-size: 10px;
+        color: #088178;
+        margin: 0px 0 -25px 0;
+    }
+    .product-container {
+        padding: 12px 13vw;
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        margin-top: 5%;
+    }
+    .pre-btn, .nxt-btn {
+        border: none;
+        width: 10vw;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #E3E6F3 100%);
+        cursor: pointer;
+        z-index: 8;
+        margin-top: -17%;
+    }
     .no-padd {
         padding-left: 0px !important;
     }
-
+    .product{
+        text-align: center;
+    }
 
     .hero-home {
         height: 50vh !important;
@@ -1021,30 +1218,7 @@ ul #cancel {
         margin-top: -19%;
     }
 
-    #hero p {
-        font-size: 10px;
-        color: #465b52;
-        margin: -12px 0 5px 0;
-    }
-
-    #hero h1 {
-        font-size: 22px;
-        line-height: 64px;
-        color: #088178;
-        margin: -34px 0px -3px 0px;
-    }
-
-    #hero h2 {
-        font-size: 18px;
-        line-height: 54px;
-        color: rgb(34, 34, 34);
-    }
-
-    #hero h4 {
-        font-size: 10px;
-        color: #088178;
-        margin: 0px 0 -25px 0;
-    }
+   
 
 
     .navbar.active {
@@ -1115,6 +1289,15 @@ ul #cancel {
     }
 
 
+    #banner h2{
+        
+            font-size: 12px !important;
+            line-height: 35px;
+            
+        
+    }
+
+
     .prd-head {
         font-size: 20px !important;
         font-weight: bold;
@@ -1143,6 +1326,7 @@ ul #cancel {
         background-color: #E3E6F3;
         margin-top: 50px;
         height: 50vh;
+        /* min-width: 260px; */
         margin-bottom: 20px;
         padding-left: 4px;
         border-radius: 4px;
@@ -1178,7 +1362,6 @@ ul #cancel {
     }
 
 
-
 }
 
 
@@ -1210,6 +1393,8 @@ ul #cancel {
     margin-top: 30%;
 }
 
+
+}
 
 #saree {
     text-align: center;

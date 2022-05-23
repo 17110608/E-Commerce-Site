@@ -27,9 +27,9 @@
                 <li id="cancel"><i class="fa-solid fa-solid fa-xmark fa-2x"></i></li>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../blog">Blog</a></li>
-                <li><a class="active" href="../products">Shop</a></li>
+                <li><a href="../products">Shop</a></li>
                 <li><a href="../contact">Contact Us</a></li>
-                <li id="cart"><a href="../cart"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li id="cart"><a class="active" href="../cart"><i class="fa-solid fa-cart-shopping"></i></a></li>
                 <li><a><i id="login1" class="fa-solid fa-user"></i></a></li>
             </ul>
         </div>
@@ -46,54 +46,10 @@
             <div id="prd-lis" class="prd-list inline">
                 <h4 class="prd-head"> Products in Cart <i class="fa-solid fa-cart-shopping"></i></h4><br>
                 <!-- From here the products list begins -->
-                <li class="fx-list">
-                    <i class="fa-solid fa-xmark prd-cancel" onclick=""></i>
-                    <img class="prd-img" src="../img/products/f1.jpg">
-                    <h4 class="prd-price">
-                        Price
-                    </h4>
-                    <span class="prd-details">
-                        This shirt made using best quality cloth's and imported from france, only limited number of
-                        quantity available. </span>
-                    <h5 class="prd-qnty"> Qnty:
-                        <select id="prd-qnty1">
-                            <option value="1" selected>1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </h5>
-                    <h6 class="prd-span block">
-                        Other element
-                    </h6>
-
-                </li>
-                <hr>
-
-                <li class="fx-list">
-                    <i class="fa-solid fa-xmark prd-cancel"></i>
-                    <img class="prd-img" src="../img/products/f2.jpg">
-                    <h4 class="prd-price">
-                        Price
-                    </h4>
-                    <span class="prd-details">
-                        This shirt made using best quality cloth's and imported from france, only limited number of
-                        quantity available. </span>
-                    <h5 class="prd-qnty"> Qnty:
-                        <select id="prd-qnty2">
-                            <option value="1" selected>1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </h5>
-                    <h6 class="prd-span block">
-                        Other element
-                    </h6>
-                </li>
-                <hr>
+            <div id="products-show">
+                <br><br>
+                <h1>No Products added</h1>
+            </div>
             </div>
             <div id="prd-ch" class="prd-ch">
                 <h2 class="total-price">Total: <span class="prd-total" id="prd-total"> 648Rs</span></h2>
@@ -106,7 +62,7 @@
                     <option value="exp">Fast Delivery(Paid)</option>
                 </select>
                 <br>
-                <input type="submit" id="checkout" class="prd-check" value="Checkout" onclick="">
+                <input type="submit" id="checkout" class="prd-check" value="Checkout" onclick="location='order.html'">
                 <br>
                 <h5 class="accept">WE ACCEPT</h5>
                 <div class="fx-list fx-col fx-display fx-pay fx-height">

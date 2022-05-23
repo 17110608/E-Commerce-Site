@@ -28,7 +28,7 @@
             <ul id="navbar" class="navbar">
                 <li id="cancel"><i class="fa-solid fa-xmark fa-2x"></i></li>
                 <li><a href="../index.html">Home</a></li>
-                <li><a class="active" href="../blog">Blog</a></li>
+                <li><a  href="../blog">Blog</a></li>
                   <li><a class="active" href="../products">Shop</a></li>
                 <li><a href="../contact">Contact Us</a></li>
                 <li id="cart"><a href="../cart"><i class="fa-solid fa-cart-shopping"></i></a></li>
@@ -50,11 +50,13 @@
             <div class="single-pro-detail">
                 <h6> Shop/Saree</h6>
                 <h4>Women's fashion saree</h4>
+
                 <h2>₹300</h2>
-           
-          <input type="number" value="1">
+                <h2>₹ 599</h2>
+
+          <input id="prd-add" type="number" value="1">
      
-            <button type="button">Add to cart</button>
+            <button id="prd-add-btn" type="button" onclick="add_cart(599,'Women fashion saree','s1.jpg')">Add to cart</button>
             <h4>Product Details</h4><br>
             <span>Care Instructions: First Dry Clean then Normal Wash
                 Fabric Details Saree:- Soft Cotton Silk Plain Saree For Women,Blouse:- Same As Saree
@@ -66,3 +68,6 @@
         </section>
    
         </div>
+    </body>
+    <script src="../js/script.js"></script>
+</html>

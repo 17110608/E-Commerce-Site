@@ -19,7 +19,6 @@ let except = find.filter(String)[0];
 //General Session to redirect already logged users
 let session = JSON.parse(sessionStorage.getItem("user"));
 if (session && (except == "login" || except == "register")) {
-
     window.location = "../products";
 }
 
@@ -89,25 +88,22 @@ if (bar) {
 
 //If login1 user id or login2 user id is available in page then run the following code
 if (login1 || login2) {
+
+
     //Run if login1 id element is available in page
     if (login1) {
         //Adding event mousehover to show the login-container after hover
+
         login1.addEventListener("mouseover", function () {
             show_login();
             console.log("Login1 event registered");
         });
     }
-    //Run if login2 id element is available in page
-    //Works only for mobile width or mode
+
     if (login2) {
-        //Adding event mousehover to show the login-container after hover
         login2.addEventListener("mouseover", function () {
-            //Before that make sure navigation bar is not showing, otherwise elements collapse will happens
-            //Getting navigation bar element style properties, initially i given style  right = -300px;
-            //if it is not -300px then it is active, so created one function to hide that navigation bar and calling here
             var style = getComputedStyle(nav).right;
             if (style != "-300px") {
-                //Calling the function to hide navigation bar
                 noMenu();
                 //    console.log(style);
             }
@@ -117,8 +113,43 @@ if (login1 || login2) {
     }
 }
 
+function hoverEffect() {
+    //console.log("Working");
+    var blink_speed = 1000; // every 1000 == 1 second, adjust to suit
+    var t = setInterval(function () {
+        var ele = document.getElementById('button1');
+        ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden');
+        var ele1 = document.getElementById('off');
+        ele1.style.visibility = (ele1.style.visibility == 'hidden' ? '' : 'hidden');
+    }, blink_speed);
+
+
+} 
+
+
+//Run if login2 id element is available in page
+//Works only for mobile width or mode
+if (login2) {
+    //Adding event mousehover to show the login-container after hover
+    login2.addEventListener("mouseover", function () {
+        //Before that make sure navigation bar is not showing, otherwise elements collapse will happens
+        //Getting navigation bar element style properties, initially i given style  right = -300px;
+        //if it is not -300px then it is active, so created one function to hide that navigation bar and calling here
+        var style = getComputedStyle(nav).right;
+        if (style != "-300px") {
+            //Calling the function to hide navigation bar
+            noMenu();
+            //    console.log(style);
+        }
+        show_login();
+        // console.log("Login2 event registered");
+    });
+}
+
+
 //Created one event to hide the both navigation bar and login-containers if they are active
 //Created one div with id hero, if user hovers mouse into that div, and any one of element is active or showing, we hiding that element
+
 hero.addEventListener("mouseover", () => {
     console.log("Hero Div clicked");
     if (login1) {
@@ -138,24 +169,34 @@ hero.addEventListener("mouseover", () => {
     }
 });
 
-function hoverEffect() {
-    // console.log("Hii");
-    var blink_speed = 1000; // every 1000 == 1 second, adjust to suit
-    var ele_ch = document.getElementById('button1');
-    if (ele_ch) {
-        var t = setInterval(function () {
-            var ele = document.getElementById('button1');
-            ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden');
-        }, blink_speed);
-    }
-}
+
+//For slider
+const productContainers = [...document.querySelectorAll('.product-container')];
+const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
+const preBtn = [...document.querySelectorAll('.pre-btn')];
+
+productContainers.forEach((item, i) => {
+    let containerDimensions = item.getBoundingClientRect();
+    // alert(JSON.stringify(containerDimensions));
+    let containerWidth = containerDimensions.width;
+
+    nxtBtn[i].addEventListener('click', () => {
+        item.scrollLeft += containerWidth;
+    })
+
+    preBtn[i].addEventListener('click', () => {
+        item.scrollLeft -= containerWidth;
+    })
+
+})
+
 
 
 //Cart page Code starts from here
 //getting select option id and running function on option selection
 let dl = document.getElementById("del-meth")
-if(dl){
-dl.onchange = delivery;
+if (dl) {
+    dl.onchange = delivery;
 }
 
 //This function will be called when user selects delivery method
@@ -172,7 +213,122 @@ function delivery() {
 
 }
 
+if (session) {
+    let email = JSON.parse(sessionStorage.getItem("user")).email;
+    var user = JSON.parse(localStorage.getItem(email));
+    //console.log(user);
+    let total = user.cart.length;
+    let products_show = document.getElementById("products-show");
+    //Run this code if cart is not empty
+    if (total > 0 && products_show) {
+        //creating the loop to show products
+        var content = "";
+        for (let i = 0; i < total; i++) {
+            let img = user.cart[i].img;
+            let price = user.cart[i].price;
+            let quantity = user.cart[i].quantity;
+            let description = user.cart[i].description;
+            var options = "";
+            //just to show the selected option
+            for (let j = 1; j < 6; j++) {
+                if (quantity == j) {
+                    options += `<option value="${j}" selected>${j}</option>`;
+                } else {
+                    options += `<option value="${j}">${j}</option>`;
+                }
+            }
+            //Created one function to add the many products based on loop
+            content += ` <li class="fx-list" id="prd-item-${i}">
+                    <i class="fa-solid fa-xmark prd-cancel" onclick="remove_product('prd-item-${i}','${i}')"></i>
+                    <img class="prd-img" src="../img/women/${img}">
+                    <h4 class="prd-price">
+                        Price: ${price}
+                    </h4>
+                    <span class="prd-details">
+                        ${description} </span>
+                    <h5 class="prd-qnty"> Qnty:
+                        <select id="prd-qnty1">
+                        ${options}
+                        </select>
+                    </h5>
+                    <h6 class="prd-span block">
+                        Other element
+                    </h6>
+
+                </li>
+                <hr>
+       `;
+
+        }
+        products_show.innerHTML = content;
+    }
+
+}
+
 //Cart page Code ends here
+
+
+//Product adding to cart starts from here
+
+
+function add_cart(price, description, img) {
+    //getting the number of items value from html add cart page
+    var prd_price = document.getElementById("prd-add").value;
+    //using session getting user details
+    let email = JSON.parse(sessionStorage.getItem("user")).email;
+    var user = JSON.parse(localStorage.getItem(email));
+    //adding product info to object
+    var product_add = {
+        "price": price,
+        "img": img,
+        "description": description,
+        "quantity": prd_price
+    };
+    //adding that object data into user cart using array push method
+    // if(user.cart.length <= 5){
+    //adding data to user cart 
+    user.cart.push(product_add);
+    //checking the empty objects and removing them here
+    user.cart = user.cart.filter(function (data) {
+        return data !== null
+    });
+    // }else {
+    //     alert("Only upto 5 products per user allowed to hold in cart")
+    // }
+    //console.log(user)
+    //Saving user cart data
+    localStorage.setItem(email, JSON.stringify(user));
+    alert("Product added to cart")
+
+}
+
+function remove_product(cls, id) {
+    //getting the number of items value from html add cart page
+    document.getElementById(cls).style = "display:none";
+    //using session getting user details
+    let email = JSON.parse(sessionStorage.getItem("user")).email;
+    var user = JSON.parse(localStorage.getItem(email));
+
+    //adding that object data into user cart using array push method
+    // if(user.cart.length <= 5){
+    //deleting the cart product based on user action
+    delete user.cart[id];
+    //checking the empty objects and removing them here
+    user.cart = user.cart.filter(function (data) {
+        return data !== null
+    });
+    // }else {
+    //     alert("Only upto 5 products per user allowed to hold in cart")
+    // }
+    //console.log(user)
+    //Saving user cart data
+    localStorage.setItem(email, JSON.stringify(user));
+    alert("Product removed from cart")
+
+}
+
+//product adding ends here
+
 
 //Database Coding starts from here
 //URLSearchParams is the standard object inside the object we passing query parameters to filter the required data
@@ -186,6 +342,7 @@ if (form.get("submit") == "Login") {
 
     //Checking with the local database to verify the user and here key value type database so we passing key as the number
     let check = localStorage.getItem(email);
+    //localStorage.removeItem(email); //to remove user 
     //if number present proceed
     if (check) {
         let userData = JSON.parse(check);
@@ -214,6 +371,7 @@ if (form.get("submit") == "Login") {
             window.location.href = "products"
             //Using session Here 
             sessionStorage.setItem("user", JSON.stringify(session_user));
+
         } else {
             //Through invalid password alert
             alert("Invalid User Password");
@@ -243,8 +401,8 @@ if (form.get("submit") == "Register") {
         "mob": mob,
         "email": email,
         "pwd": pwd,
-        "cart": "",
-        "purchase": "",
+        "cart": [],
+        "purchase": [],
         "address": ""
     };
     //This one for session purpose, we can use previous one also but there password also contains that will be not good practice
@@ -253,10 +411,11 @@ if (form.get("submit") == "Register") {
         "lname": lname,
         "mob": mob,
         "email": email,
-        "cart": "",
-        "purchase": "",
+        "cart": [],
+        "purchase": [],
         "address": ""
     };
+
     //Before that make user based on the user number no account is present
     let pre_check = localStorage.getItem(email);
     //If no account is there then create new one
@@ -273,11 +432,7 @@ if (form.get("submit") == "Register") {
         //Redirect him to login page, so he can login from login page
         window.location.href = "login"
     }
-
-<<<<<<< HEAD
 }
 
-  
-=======
+  }
 }
->>>>>>> a10168cc679662fc766665b86b748bab7becee5d
