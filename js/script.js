@@ -170,6 +170,22 @@ hero.addEventListener("mouseover", () => {
 });
 
 
+function hoverEffect() {
+
+    //console.log("Working");
+    var blink_speed = 1000; // every 1000 == 1 second, adjust to suit
+    //setInterbal is browser API to repeat the task again after some time interval
+    var t = setInterval(function () {
+        var ele = document.getElementById('button1');
+        ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden');
+        var ele1 = document.getElementById('off');
+        ele1.style.visibility = (ele1.style.visibility == 'hidden' ? '' : 'hidden');
+    }, blink_speed);
+
+
+}
+
+
 //For slider
 const productContainers = [...document.querySelectorAll('.product-container')];
 const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
